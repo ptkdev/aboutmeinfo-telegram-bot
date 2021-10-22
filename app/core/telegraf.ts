@@ -1,7 +1,6 @@
 /**
- * Translations
+ * Telegraf
  * =====================
- * Switch translations
  *
  * @contributors: Patryk Rzucidło [@ptkdev] <support@ptkdev.io> (https://ptk.dev)
  *                Alì Shadman [@AliShadman95] (https://github.com/AliShadman95)
@@ -9,13 +8,10 @@
  * @license: MIT License
  *
  */
-import en from "@translations/en.json";
-import it from "@translations/it.json";
+import { Telegraf } from "telegraf";
+import configs from "@configs/config.json";
 
-const translations = {
-	en,
-	it,
-};
+const bot = new Telegraf(configs.telegram.token);
 
-export { it, en };
-export default translations;
+export { bot };
+export default bot;

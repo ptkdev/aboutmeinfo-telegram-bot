@@ -1,5 +1,5 @@
 {
-	"projectName": "ptkdev-boilerplate/node-telegram-bot-boilerplate",
+	"projectName": "ptkdev/aboutmeinfo-telegram-bot",
 	"projectOwner": "ptkdev",
 	"repoType": "github",
 	"repoHost": "https://github.com",
@@ -14,6 +14,18 @@
 			"name": "Patryk Rzucidło",
 			"avatar_url": "https://avatars1.githubusercontent.com/u/442844?v=4",
 			"profile": "https://ptk.dev",
+			"contributions": [
+				"code",
+				"translation",
+				"doc",
+				"bug"
+			]
+		},
+		{
+			"login": "AliShadman95",
+			"name": "Alì Shadman",
+			"avatar_url": "https://avatars1.githubusercontent.com/u/50172746?v=4",
+			"profile": "",
 			"contributions": [
 				"code",
 				"translation",

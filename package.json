@@ -1,8 +1,8 @@
 {
-	"name": "@ptkdev/node-telegram-bot-boilerplate",
-	"displayName": "Node Telegram BOT Boilerplate",
-	"description": "Create your telegram bot with this friendly boilerplate. Use this repository as template for your bot",
-	"version": "1.0.20210412",
+	"name": "@ptkdev/aboutmeinfo-telegram-bot",
+	"displayName": "About Me Info",
+	"description": "Share your social media and links on Telegram",
+	"version": "0.1.0",
 	"main": "dist/core/bot.js",
 	"publishConfig": {
 		"access": "public"
@@ -12,13 +12,13 @@
 	"license-docs": "CC BY 4.0",
 	"license-translations": "CC BY 4.0",
 	"license-images": "CC BY-NC 4.0",
-	"homepage": "https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate",
+	"homepage": "https://github.com/ptkdev/aboutmeinfo-telegram-bot",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate.git"
+		"url": "https://github.com/ptkdev/aboutmeinfo-telegram-bot.git"
 	},
 	"bugs": {
-		"url": "https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/issues"
+		"url": "https://github.com/ptkdev/aboutmeinfo-telegram-bot/issues"
 	},
 	"engines": {
 		"node": ">=14.0.0"
@@ -30,15 +30,18 @@
 		"start": "node dist/core/bot.js",
 		"start-pm2": "pm2 start .pm2-process.json",
 		"stop-pm2": "pm2 stop .pm2-process.json",
-		"dev": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --enable && ts-node scripts/rmdist.ts && nodemon --exec 'npm run build && npm run start'",
+		"dev": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --enable && ts-node scripts/rmdist.ts && nodemon --exec 'ts-node --compiler ttypescript app/core/bot.ts'",
 		"build": "ttsc",
 		"release": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --disable && npm run build && ttsc --declaration --emitDeclarationOnly",
 		"test": "jest app",
+		"migrate": "ts-node scripts/migration.ts",
+		"mongodump": "mongodump -d aboutmeinfodb -o .",
+		"mongorestore": "mongorestore -d aboutmeinfodb aboutmeinfodb",
 		"docs": "git submodule update --recursive && markserv ./README.md",
 		"lint": "npm run lint-prettify && eslint . --cache --ext .ts,.js",
 		"lint-fix": "npm run lint-prettify && eslint . --cache --ext .ts,.js --fix",
-		"lint-prettify": "prettier --write **/*.{ts,md,json}",
-		"git-set-upstream": "git remote add upstream git@github.com:ptkdev-boilerplate/node-telegram-bot-boilerplate.git && git fetch upstream",
+		"lint-prettify": "prettier --write --ignore-unknown '**/*.{md,json,ts,js}'",
+		"git-set-upstream": "git remote add upstream git@github.com:ptkdev/aboutmeinfo-telegram-bot.git && git fetch upstream",
 		"git-pull-upstream": "git pull upstream main && git pull upstream beta && git pull upstream nightly",
 		"git-pull": "git pull --recursive",
 		"git-ignore-reset": "git rm -r --cached . && git add . && git commit -m \"[Fix] Removing all files in .gitignore\"",
@@ -50,49 +53,59 @@
 		"pre-commit": "npm run contributors-generate && npm run all-shields-generate && npm run lint-fix && npm run test",
 		"pkg-clean": "rm -rf node_modules package-lock.json && npm install && husky install",
 		"pkg-update": "npm update",
-		"pkg-upgrade": "npx npm-check-updates -u && npm install && husky install"
+		"pkg-upgrade": "npx npm-check-updates -u && npm install && husky install",
+		"postinstall": "rm ./node_modules/mongoose/index.d.ts"
 	},
 	"dependencies": {
-		"lowdb": "^1.0.0",
-		"pm2": "^4.5.6",
-		"telegraf": "^4.3.0"
+		"@ptkdev/logger": "^1.8.0",
+		"mongoose": "^5.0.0",
+		"pm2": "^5.1.2",
+		"telegraf": "^4.4.2"
 	},
 	"devDependencies": {
 		"@ptkdev/all-shields-cli": "^2.0.2",
-		"@types/jest": "^26.0.23",
-		"@types/lowdb": "^1.0.9",
-		"@types/node": "^15.0.1",
-		"@types/shelljs": "^0.8.8",
-		"@typescript-eslint/eslint-plugin": "^4.22.0",
-		"@typescript-eslint/parser": "^4.22.0",
+		"@types/jest": "^27.0.2",
+		"@types/lowdb": "^1.0.11",
+		"@types/node": "^16.11.1",
+		"@types/shelljs": "^0.8.9",
+		"@typescript-eslint/eslint-plugin": "^5.1.0",
+		"@typescript-eslint/parser": "^5.1.0",
 		"all-contributors-cli": "^6.20.0",
-		"eslint": "^7.25.0",
-		"eslint-plugin-jest": "^24.3.6",
-		"eslint-plugin-jsdoc": "^32.3.3",
-		"husky": "^6.0.0",
-		"jest": "^26.6.3",
+		"eslint": "^7.0.0",
+		"eslint-plugin-jest": "^25.2.2",
+		"eslint-plugin-jsdoc": "^36.1.1",
+		"husky": "^7.0.4",
+		"jest": "^27.3.1",
 		"json": "^11.0.0",
 		"markserv": "^1.17.4",
-		"nodemon": "^2.0.7",
-		"prettier": "^2.2.1",
-		"replace-in-file": "^6.2.0",
+		"nodemon": "^2.0.14",
+		"prettier": "^2.4.1",
 		"shelljs": "^0.8.4",
-		"ts-jest": "^26.5.5",
-		"ts-node": "^9.1.1",
+		"ts-jest": "^27.0.7",
+		"ts-node": "^10.3.0",
 		"ttypescript": "^1.5.12",
-		"typescript": "^4.2.4",
-		"typescript-transform-paths": "^2.2.3",
-		"yargs": "^16.2.0"
+		"typescript": "^4.4.4",
+		"typescript-transform-paths": "^3.3.1",
+		"yargs": "^17.2.1"
 	},
 	"keywords": [
 		"ptkdev",
-		"node",
-		"node-module",
-		"node-library",
-		"node-telegram-bot-boilerplate",
-		"node-library-boilerplate",
-		"boilerplate",
-		"github-template"
+		"telegram",
+		"telegram links",
+		"telegram bot",
+		"telegrambot",
+		"aboutme",
+		"aboutmeinfo",
+		"linktree",
+		"share",
+		"my profiles",
+		"profiles",
+		"links"
 	],
-	"contributors": []
+	"contributors": [
+		{
+			"name": "Ali Shadman",
+			"url": "https://github.com/AliShadman95"
+		}
+	]
 }

@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"module": "CommonJS",
-		"target": "ES6",
+		"target": "ES2019",
 		"sourceMap": true,
 		"outDir": "./dist/",
 		"lib": ["es2017", "es7", "es6", "DOM"],
@@ -9,18 +9,26 @@
 		"resolveJsonModule": true,
 		"moduleResolution": "node",
 		"esModuleInterop": true,
-		"noImplicitAny": true,
+		"noImplicitAny": false,
 		"noImplicitThis": true,
 		"declaration": false,
 		"allowJs": true,
+		"strict": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"forceConsistentCasingInFileNames": true,
 		"paths": {
 			"@databases/*": ["./database/*"],
 			"@translations/*": ["./app/translations/*"],
 			"@configs/*": ["./app/configs/*"],
+			"@routes/*": ["./app/routes/*"],
 			"@app/*": ["./app/*"]
 		},
 		"typeRoots": ["app/**/types", "node_modules/@types"],
-		"plugins": [{ "transform": "typescript-transform-paths" }, { "transform": "typescript-transform-paths", "afterDeclarations": true }]
+		"plugins": [
+			{ "transform": "typescript-transform-paths" },
+			{ "transform": "typescript-transform-paths", "afterDeclarations": true }
+		]
 	},
 	"include": ["app/**/*"],
 	"exclude": ["node_modules/*", "dist/*", "scripts/*"]

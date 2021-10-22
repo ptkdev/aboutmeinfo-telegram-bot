@@ -53,7 +53,7 @@ const about = async (): Promise<void> => {
 				try {
 					await ctx.reply(
 						translate(lang.language, "about_command_show_links", {
-							username: telegram.api.message.getUsername(ctx),
+							username: username,
 						}),
 						Markup.inlineKeyboard([
 							account.facebook !== ""

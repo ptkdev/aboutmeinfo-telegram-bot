@@ -40,7 +40,16 @@ const about = async (): Promise<void> => {
 		} else {
 			const username = telegram.api.message.getText(ctx).replace("/about ", "").replace("@", "").trim();
 			const account = await db.about.get({ username: username });
-			if (account.username === "") {
+			if (
+				account.username === "" ||
+				(account.facebook === "" &&
+					account.instagram === "" &&
+					account.twitter === "" &&
+					account.linkedin === "" &&
+					account.tiktok === "" &&
+					account.github === "" &&
+					account.website === "")
+			) {
 				await telegram.api.message.send(
 					ctx,
 					telegram.api.message.getChatID(ctx),
@@ -53,7 +62,7 @@ const about = async (): Promise<void> => {
 				try {
 					await ctx.reply(
 						translate(lang.language, "about_command_show_links", {
-							username: telegram.api.message.getUsername(ctx),
+							username: username,
 						}),
 						Markup.inlineKeyboard([
 							account.facebook !== ""

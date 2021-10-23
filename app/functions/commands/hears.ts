@@ -13,7 +13,6 @@ import translate from "@translations/translate";
 import db from "@routes/api/database";
 import telegram from "@routes/api/telegram";
 import logger from "@app/functions/utils/logger";
-import { AboutInterface } from "@app/types/databases.type.js";
 
 /**
  * hears: any taxt from bot chat

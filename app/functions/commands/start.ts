@@ -48,25 +48,33 @@ const start = async (): Promise<void> => {
 				}),
 			);
 		} else {
-			const about: AboutInterface = await db.about.get({
-				id: telegram.api.message.getUserID(ctx),
-			});
+			if (telegram.api.message.getUsername(ctx) !== "") {
+				const about: AboutInterface = await db.about.get({
+					id: telegram.api.message.getUserID(ctx),
+				});
 
-			if (about.id.toString() !== "0") {
-				about.step = "facebook";
-				await db.about.update({ id: about.id }, about);
+				if (about.id.toString() !== "0") {
+					about.step = "facebook";
+					await db.about.update({ id: about.id }, about);
+				} else {
+					about.id = telegram.api.message.getUserID(ctx);
+					about.username = telegram.api.message.getUsername(ctx);
+					about.step = "facebook";
+					await db.about.add(about);
+				}
+
+				await telegram.api.message.send(
+					ctx,
+					telegram.api.message.getChatID(ctx),
+					translate(lang.language, "set_command_facebook"),
+				);
 			} else {
-				about.id = telegram.api.message.getUserID(ctx);
-				about.username = telegram.api.message.getUsername(ctx);
-				about.step = "facebook";
-				await db.about.add(about);
+				await telegram.api.message.send(
+					ctx,
+					telegram.api.message.getChatID(ctx),
+					translate(lang.language, "start_command_nickname_empty"),
+				);
 			}
-
-			await telegram.api.message.send(
-				ctx,
-				telegram.api.message.getChatID(ctx),
-				translate(lang.language, "set_command_facebook"),
-			);
 		}
 	});
 };

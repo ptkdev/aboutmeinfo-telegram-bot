@@ -194,4 +194,5 @@ export interface AboutInterface {
 	twitter: string;
 	tiktok: string;
 	website: string;
+	privacy: string;
 }

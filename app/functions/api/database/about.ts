@@ -23,6 +23,7 @@ const schema = new Schema<AboutInterface>({
 	twitter: { type: String, default: "" },
 	tiktok: { type: String, default: "" },
 	website: { type: String, default: "" },
+	privacy: { type: String, default: "" },
 });
 
 const query = model<AboutInterface>("About", schema, "about");

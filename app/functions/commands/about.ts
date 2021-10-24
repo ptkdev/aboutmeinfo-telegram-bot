@@ -40,7 +40,16 @@ const about = async (): Promise<void> => {
 		} else {
 			const username = telegram.api.message.getText(ctx).replace("/about ", "").replace("@", "").trim();
 			const account = await db.about.get({ username: username });
-			if (account.username === "") {
+			if (
+				account.username === "" ||
+				(account.facebook === "" &&
+					account.instagram === "" &&
+					account.twitter === "" &&
+					account.linkedin === "" &&
+					account.tiktok === "" &&
+					account.github === "" &&
+					account.website === "")
+			) {
 				await telegram.api.message.send(
 					ctx,
 					telegram.api.message.getChatID(ctx),
@@ -50,72 +59,91 @@ const about = async (): Promise<void> => {
 					}),
 				);
 			} else {
-				try {
-					await ctx.reply(
-						translate(lang.language, "about_command_show_links", {
-							username: telegram.api.message.getUsername(ctx),
+				const current_user = telegram.api.message.getUsername(ctx);
+				let privacy = 0;
+				account.privacy.split(",").map((item) => {
+					if (item.trim().replace("@", "") === current_user) {
+						privacy++;
+					}
+				});
+
+				if (privacy > 0) {
+					await telegram.api.message.send(
+						ctx,
+						telegram.api.message.getChatID(ctx),
+						translate(lang.language, "hears_command_privacy_not_auth", {
+							username: username,
+							bot_nickname: telegram.api.bot.getUsername(ctx),
 						}),
-						Markup.inlineKeyboard([
-							account.facebook !== ""
-								? [
-										Markup.button.url(
-											translate(lang.language, "about_command_button_facebook"),
-											account.facebook,
-										),
-								  ]
-								: [],
-							account.instagram !== ""
-								? [
-										Markup.button.url(
-											translate(lang.language, "about_command_button_instagram"),
-											account.instagram,
-										),
-								  ]
-								: [],
-							account.twitter !== ""
-								? [
-										Markup.button.url(
-											translate(lang.language, "about_command_button_twitter"),
-											account.twitter,
-										),
-								  ]
-								: [],
-							account.github !== ""
-								? [
-										Markup.button.url(
-											translate(lang.language, "about_command_button_github"),
-											account.github,
-										),
-								  ]
-								: [],
-							account.tiktok !== ""
-								? [
-										Markup.button.url(
-											translate(lang.language, "about_command_button_tiktok"),
-											account.tiktok,
-										),
-								  ]
-								: [],
-							account.linkedin !== ""
-								? [
-										Markup.button.url(
-											translate(lang.language, "about_command_button_linkedin"),
-											account.linkedin,
-										),
-								  ]
-								: [],
-							account.website !== ""
-								? [
-										Markup.button.url(
-											translate(lang.language, "about_command_button_website"),
-											account.website,
-										),
-								  ]
-								: [],
-						]),
 					);
-				} catch (err) {
-					console.log(err);
+				} else {
+					try {
+						await ctx.reply(
+							translate(lang.language, "about_command_show_links", {
+								username: username,
+							}),
+							Markup.inlineKeyboard([
+								account.facebook !== ""
+									? [
+											Markup.button.url(
+												translate(lang.language, "about_command_button_facebook"),
+												account.facebook,
+											),
+									  ]
+									: [],
+								account.instagram !== ""
+									? [
+											Markup.button.url(
+												translate(lang.language, "about_command_button_instagram"),
+												account.instagram,
+											),
+									  ]
+									: [],
+								account.twitter !== ""
+									? [
+											Markup.button.url(
+												translate(lang.language, "about_command_button_twitter"),
+												account.twitter,
+											),
+									  ]
+									: [],
+								account.github !== ""
+									? [
+											Markup.button.url(
+												translate(lang.language, "about_command_button_github"),
+												account.github,
+											),
+									  ]
+									: [],
+								account.tiktok !== ""
+									? [
+											Markup.button.url(
+												translate(lang.language, "about_command_button_tiktok"),
+												account.tiktok,
+											),
+									  ]
+									: [],
+								account.linkedin !== ""
+									? [
+											Markup.button.url(
+												translate(lang.language, "about_command_button_linkedin"),
+												account.linkedin,
+											),
+									  ]
+									: [],
+								account.website !== ""
+									? [
+											Markup.button.url(
+												translate(lang.language, "about_command_button_website"),
+												account.website,
+											),
+									  ]
+									: [],
+							]),
+						);
+					} catch (err) {
+						console.log(err);
+					}
 				}
 			}
 		}

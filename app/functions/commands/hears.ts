@@ -13,7 +13,6 @@ import translate from "@translations/translate";
 import db from "@routes/api/database";
 import telegram from "@routes/api/telegram";
 import logger from "@app/functions/utils/logger";
-import { AboutInterface } from "@app/types/databases.type.js";
 
 /**
  * hears: any taxt from bot chat
@@ -24,6 +23,7 @@ import { AboutInterface } from "@app/types/databases.type.js";
 const hears = async (): Promise<void> => {
 	bot.on("text", async (ctx) => {
 		logger.info("hears: text", "hears.ts:on(text)");
+
 		const lang = await db.settings.get({
 			group_id: telegram.api.message.getChatID(ctx),
 		});
@@ -34,6 +34,7 @@ const hears = async (): Promise<void> => {
 			});
 			if (
 				about.step !== "done" &&
+				about.step !== "privacy" &&
 				(telegram.api.message.getText(ctx).trim().toLowerCase().startsWith("https://") ||
 					telegram.api.message.getText(ctx).trim().toLowerCase() ===
 						translate(lang.language, "set_command_skip"))
@@ -164,13 +165,29 @@ const hears = async (): Promise<void> => {
 								username: telegram.api.message.getUsername(ctx),
 							}),
 						);
-
 						break;
 
 					default:
 						break;
 				}
-			} else {
+			} else if (about.step === "privacy") {
+				about.privacy =
+					telegram.api.message.getText(ctx).trim().toLowerCase() ===
+					translate(lang.language, "set_command_privacy_skip")
+						? ""
+						: telegram.api.message.getText(ctx).trim().toLowerCase();
+				about.step = "done";
+
+				await db.about.update({ id: about.id }, about);
+
+				await telegram.api.message.send(
+					ctx,
+					telegram.api.message.getChatID(ctx),
+					translate(lang.language, "set_command_privacy_done", {
+						username: telegram.api.message.getUsername(ctx),
+					}),
+				);
+			} else if (about.step !== "done") {
 				await telegram.api.message.send(
 					ctx,
 					telegram.api.message.getChatID(ctx),

@@ -1,4 +1,4 @@
-# v0.2.0 (TBD, 2021)
+# v0.2.0 (October 25, 2021)
 
 -   `/privacy` command, limit `/about` request to specific users
 -   Fix: all empty links give `about_command_user_not_found` message

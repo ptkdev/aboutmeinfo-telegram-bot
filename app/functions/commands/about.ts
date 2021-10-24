@@ -59,7 +59,6 @@ const about = async (): Promise<void> => {
 					}),
 				);
 			} else {
-				console.log(JSON.stringify(ctx, null, 4));
 				const current_user = telegram.api.message.getUsername(ctx);
 				let privacy = 0;
 				account.privacy.split(",").map((item) => {

@@ -53,7 +53,7 @@ const add = async (about: AboutInterface): Promise<void> => {
  */
 const remove = async (search: Record<string, number | string | boolean>): Promise<void> => {
 	try {
-		query.findOneAndDelete(search, function (error: string) {
+		await query.findOneAndDelete(search, function (error: string) {
 			if (error) {
 				logger.error(error || "");
 			}
@@ -73,7 +73,7 @@ const remove = async (search: Record<string, number | string | boolean>): Promis
  */
 const update = async (search: Record<string, number | string | boolean>, about: AboutInterface): Promise<void> => {
 	try {
-		query.findOneAndUpdate(search, about, function (error: string) {
+		await query.findOneAndUpdate(search, about, function (error: string) {
 			if (error) {
 				logger.error(error || "");
 			}

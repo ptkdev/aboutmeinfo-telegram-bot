@@ -47,7 +47,7 @@ const add = async (user: TelegramUserInterface): Promise<void> => {
  */
 const remove = async (search: Record<string, number | string | boolean>): Promise<void> => {
 	try {
-		query.findOneAndDelete(search, function (error: string) {
+		await query.findOneAndDelete(search, function (error: string) {
 			if (error) {
 				logger.error(error || "");
 			}
@@ -70,7 +70,7 @@ const update = async (
 	user: TelegramUserInterface,
 ): Promise<void> => {
 	try {
-		query.findOneAndUpdate(search, user, function (error: string) {
+		await query.findOneAndUpdate(search, user, function (error: string) {
 			if (error) {
 				logger.error(error || "");
 			}

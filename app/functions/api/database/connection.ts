@@ -31,6 +31,7 @@ const connectDB = async (): Promise<void> => {
 			useFindAndModify: false,
 			useUnifiedTopology: true,
 			useCreateIndex: true,
+			maxPoolSize: 100,
 		});
 		database = Mongoose.connection;
 		logger.info("Connected to database", "connections.ts:connectDB()");

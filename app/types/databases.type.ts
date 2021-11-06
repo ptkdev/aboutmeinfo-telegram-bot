@@ -193,6 +193,8 @@ export interface AboutInterface {
 	facebook: string;
 	twitter: string;
 	tiktok: string;
+	steam: string;
+	onlyfans: string;
 	website: string;
 	privacy: string;
 }

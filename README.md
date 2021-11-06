@@ -45,6 +45,9 @@ About Me Info Bot: Share your social media and links on Telegram
 -   [✔️] Share your facebook profile on Telegram
 -   [✔️] Share your twitter profile on Telegram
 -   [✔️] Share your tiktok profile on Telegram
+-   [✔️] Share your steam profile on Telegram
+-   [✔️] Share your linkedin profile on Telegram
+-   [✔️] Share your onlyfans profile on Telegram
 -   [✔️] Share your website on Telegram
 
 ## 🚀 Installation

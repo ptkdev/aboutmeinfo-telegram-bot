@@ -32,7 +32,15 @@
 				"doc",
 				"bug"
 			]
-		}
+		},
+		{
+			"login": "ial32",
+			"name": "Adrian Castro",
+			"avatar_url": "https://avatars.githubusercontent.com/u/562969?v=4",
+			"profile": "https://adct.it",
+			"contributions": [
+				"translation"
+			]
 	],
 	"contributorsPerLine": 6,
 	"commitConvention": "none"

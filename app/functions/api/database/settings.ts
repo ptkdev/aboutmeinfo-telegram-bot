@@ -94,7 +94,7 @@ const get = async (search: Record<string, number | string | boolean>): Promise<S
 			}
 		});
 
-		return settings || new query().toJSON();
+		return (await settings) || new query().toJSON();
 	} catch (error: any) {
 		logger.error(JSON.stringify(error || ""), "settings.ts:get()");
 	}

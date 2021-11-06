@@ -100,7 +100,7 @@ const get = async (search: Record<string, number | string | boolean>): Promise<A
 			}
 		});
 
-		return about || new query().toJSON();
+		return (await about) || new query().toJSON();
 	} catch (error: any) {
 		logger.error(JSON.stringify(error || ""), "about.ts:get()");
 	}

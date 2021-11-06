@@ -18,12 +18,16 @@ import logger from "@app/functions/utils/logger";
 
 	await db.connection.connectDB();
 
-	await commands.quit();
-	await commands.start();
-	await commands.about();
-	await commands.settings();
-	await commands.privacy();
-	await commands.hears();
+	try {
+		await commands.quit();
+		await commands.start();
+		await commands.about();
+		await commands.settings();
+		await commands.privacy();
+		await commands.hears();
+	} catch (error) {
+		logger.error(JSON.stringify(error || ""), "generic error: ");
+	}
 
 	await commands.launch();
 })();

@@ -136,6 +136,42 @@ const hears = async (): Promise<void> => {
 							translate(lang.language, "set_command_skip")
 								? ""
 								: telegram.api.message.getText(ctx).trim().toLowerCase();
+						about.step = "steam";
+
+						await db.about.update({ id: about.id }, about);
+
+						await telegram.api.message.send(
+							ctx,
+							telegram.api.message.getChatID(ctx),
+							translate(lang.language, "set_command_steam"),
+						);
+
+						break;
+
+					case "steam":
+						about.steam =
+							telegram.api.message.getText(ctx).trim().toLowerCase() ===
+							translate(lang.language, "set_command_skip")
+								? ""
+								: telegram.api.message.getText(ctx).trim().toLowerCase();
+						about.step = "onlyfans";
+
+						await db.about.update({ id: about.id }, about);
+
+						await telegram.api.message.send(
+							ctx,
+							telegram.api.message.getChatID(ctx),
+							translate(lang.language, "set_command_onlyfans"),
+						);
+
+						break;
+
+					case "onlyfans":
+						about.onlyfans =
+							telegram.api.message.getText(ctx).trim().toLowerCase() ===
+							translate(lang.language, "set_command_skip")
+								? ""
+								: telegram.api.message.getText(ctx).trim().toLowerCase();
 						about.step = "website";
 
 						await db.about.update({ id: about.id }, about);

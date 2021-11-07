@@ -2,6 +2,8 @@
 
 -   Fix bugs
 -   Removed: ttypescript
+-   New: onlyfans
+-   New: steam
 
 <!-- all-shields/sponsors-badges:START -->
 

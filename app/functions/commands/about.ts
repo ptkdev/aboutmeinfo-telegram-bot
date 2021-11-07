@@ -47,6 +47,8 @@ const about = async (): Promise<void> => {
 					account.twitter === "" &&
 					account.linkedin === "" &&
 					account.tiktok === "" &&
+					account.steam === "" &&
+					account.onlyfans === "" &&
 					account.github === "" &&
 					account.website === "")
 			) {
@@ -128,6 +130,22 @@ const about = async (): Promise<void> => {
 											Markup.button.url(
 												translate(lang.language, "about_command_button_linkedin"),
 												account.linkedin,
+											),
+									  ]
+									: [],
+								account.steam !== ""
+									? [
+											Markup.button.url(
+												translate(lang.language, "about_command_button_steam"),
+												account.steam,
+											),
+									  ]
+									: [],
+								account.onlyfans !== ""
+									? [
+											Markup.button.url(
+												translate(lang.language, "about_command_button_onlyfans"),
+												account.onlyfans,
 											),
 									  ]
 									: [],

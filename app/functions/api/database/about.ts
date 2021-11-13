@@ -24,6 +24,7 @@ const schema = new Schema<AboutInterface>({
 	tiktok: { type: String, default: "" },
 	steam: { type: String, default: "" },
 	onlyfans: { type: String, default: "" },
+	amazon: { type: String, default: "" },
 	website: { type: String, default: "" },
 	privacy: { type: String, default: "" },
 });

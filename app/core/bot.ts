@@ -18,16 +18,13 @@ import logger from "@app/functions/utils/logger";
 
 	await db.connection.connectDB();
 
-	try {
-		await commands.quit();
-		await commands.start();
-		await commands.about();
-		await commands.settings();
-		await commands.privacy();
-		await commands.hears();
-	} catch (error) {
-		logger.error(JSON.stringify(error || ""), "generic error: ");
-	}
+	await commands.quit();
+	await commands.start();
+	await commands.about();
+	await commands.settings();
+	await commands.set();
+	await commands.privacy();
+	await commands.hears();
 
 	await commands.launch();
 })();
@@ -43,13 +40,13 @@ process.once("SIGUSR2", async function () {
 });
 
 process.on("uncaughtException", function (error) {
-	console.log("An error uncaughtException has occured. error is: %s and stack trace is: %s", error);
+	console.log("An error uncaughtException has occured. error is: %s", error);
 	console.log("Process will restart now.");
 	process.exit(1);
 });
 
 process.on("unhandledRejection", function (error) {
-	console.log("An error unhandledRejection has occured. error is: %s and stack trace is: %s", error);
+	console.log("An error unhandledRejection has occured. error is: %s", error);
 	console.log("Process will restart now.");
 	process.exit(1);
 });

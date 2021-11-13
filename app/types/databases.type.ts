@@ -195,6 +195,7 @@ export interface AboutInterface {
 	tiktok: string;
 	steam: string;
 	onlyfans: string;
+	amazon: string;
 	website: string;
 	privacy: string;
 }

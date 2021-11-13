@@ -49,6 +49,7 @@ const about = async (): Promise<void> => {
 					account.tiktok === "" &&
 					account.steam === "" &&
 					account.onlyfans === "" &&
+					account.amazon === "" &&
 					account.github === "" &&
 					account.website === "")
 			) {
@@ -146,6 +147,14 @@ const about = async (): Promise<void> => {
 											Markup.button.url(
 												translate(lang.language, "about_command_button_onlyfans"),
 												account.onlyfans,
+											),
+									  ]
+									: [],
+								account.amazon !== ""
+									? [
+											Markup.button.url(
+												translate(lang.language, "about_command_button_amazon"),
+												account.amazon,
 											),
 									  ]
 									: [],

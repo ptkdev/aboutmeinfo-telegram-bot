@@ -2,7 +2,7 @@
 	"name": "@ptkdev/aboutmeinfo-telegram-bot",
 	"displayName": "About Me Info",
 	"description": "Share your social media and links on Telegram",
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"main": "dist/core/bot.js",
 	"publishConfig": {
 		"access": "public"
@@ -58,9 +58,8 @@
 	},
 	"dependencies": {
 		"@ptkdev/logger": "^1.8.0",
-		"mongoose": "^5.0.0",
-		"pm2": "^5.1.2",
-		"telegraf": "^4.4.2"
+		"grammy": "^1.4.0",
+		"mongoose": "^5.0.0"
 	},
 	"devDependencies": {
 		"@ptkdev/all-shields-cli": "^2.0.2",
@@ -78,6 +77,7 @@
 		"json": "^11.0.0",
 		"markserv": "^1.17.4",
 		"nodemon": "^2.0.14",
+		"pm2": "^5.1.2",
 		"prettier": "^2.4.1",
 		"shelljs": "^0.8.4",
 		"ts-jest": "^27.0.7",

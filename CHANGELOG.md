@@ -1,8 +1,7 @@
-# v0.4.0 (November 13, 2021)
+# v0.5.0 (TBD, 2021)
 
--   Fix bugs
--   New: wishlist amazon
--   Command: /set - update your social buttons without /start
+-   Porting: from Telegraf to Grammy Framework
+-   Fix: /about command case-sensitive issue
 
 <!-- all-shields/sponsors-badges:START -->
 

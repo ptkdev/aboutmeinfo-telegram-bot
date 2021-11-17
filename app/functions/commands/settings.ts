@@ -39,7 +39,10 @@ const settings = async (): Promise<void> => {
 		buttons.row();
 		buttons.text(translate(lang.language, "settings_command_credits"), "settings_credits");
 		buttons.row();
-		buttons.url(translate(lang.language, "settings_command_email"), "https://t.me/ptkdev_support");
+		buttons.url(
+			translate(lang.language, "settings_command_email"),
+			translate(lang.language, "settings_command_help"),
+		);
 
 		await ctx.reply(translate(lang.language, "settings_command_options"), {
 			reply_markup: buttons,
@@ -53,7 +56,6 @@ const settings = async (): Promise<void> => {
 
 		const buttons = new InlineKeyboard();
 		buttons.text(translate(lang.language, "settings_command_language_english"), "settings_set_english");
-		buttons.row();
 		buttons.text(translate(lang.language, "settings_command_language_italian"), "settings_set_italian");
 
 		await ctx.reply(translate(lang.language, "settings_command_switchlanguage"), {

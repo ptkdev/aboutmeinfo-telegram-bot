@@ -39,7 +39,11 @@ const about = async (): Promise<void> => {
 			);
 		} else {
 			const username = telegram.api.message.getText(ctx).replace("/about ", "").replace("@", "").trim();
-			const account = await db.about.get({ username: username });
+			const account = await db.about.get({
+				username: {
+					$regex: new RegExp(username, "i"),
+				},
+			});
 			if (
 				account.username === "" ||
 				(account.facebook === "" &&

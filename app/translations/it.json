@@ -44,10 +44,11 @@
 	"set_command_privacy": "Scrivi l'elenco degli utenti (separato da virgola) i quali possono usare il comando /about per vedere i tuoi links, esempio: <b>@utente1, @utente2</b>\n\nScrivi \"<b>profilo pubblico</b>\" se vuoi permettere a tutti di usare il comando /about e vedere i tuoi social",
 	"set_command_privacy_done": "🔐 Fatto! Hai impostato la privacy correttamente!",
 	"set_command_privacy_skip": "profilo pubblico",
-	"hears_command_privacy_not_auth": "Non sei autorizzato dall'utente a vedere i suoi links e social, chiedi di inserirti nell'elenco del comando /privacy",
+	"about_command_show_links_error": "🚨 Uno degli url non è valido, deve iniziare con https:// e finire con .net, .com o altri domini validi. Esempio: https://fb.me/ptkdev",
+	"hears_command_privacy_not_auth": "🔐 Non sei autorizzato dall'utente a vedere i suoi links e social, chiedi di inserirti nell'elenco del comando /privacy",
 	"about_command_show_links": "🌟 I profili disponibili di @##username## sono:",
-	"hears_command_bad_url": "L'url inserito non è valido, deve iniziare con <b>https://</b>, esempio: https://example.it",
-	"about_command_user_not_found": "L'utente @##username## non ha impostato i suoi profili, chiedigli di farlo scrivendo in privato al bot: @##bot_nickname##",
-	"start_command_nickname_empty": "Non hai impostato un nickname nel tuo account di Telegram, entra nelle impostazioni dell'app e inseriscine uno. Poi fai nuovamente /start",
+	"hears_command_bad_url": "🚨 L'url inserito non è valido, deve iniziare con <b>https://</b>, esempio: https://example.it",
+	"about_command_user_not_found": "😿 L'utente @##username## non ha impostato i suoi profili, chiedigli di farlo scrivendo in privato al bot: @##bot_nickname##",
+	"start_command_nickname_empty": "🚷 Non hai impostato un nickname nel tuo account di Telegram, entra nelle impostazioni dell'app e inseriscine uno. Poi fai nuovamente /start",
 	"start_command_intro_group": "Questo bot permette di condividere i tuoi profili social e link con gli utenti di telegram. Usa il comando /about @nickname per vedere i profili e link di un utente, ad esempio:\n\n/about @ptkdev\n\nScrivi in privato a @##bot_nickname## per impostare i tuoi profili."
 }

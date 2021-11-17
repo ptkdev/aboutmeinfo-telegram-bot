@@ -138,7 +138,11 @@ const about = async (): Promise<void> => {
 							},
 						);
 					} catch (err) {
-						console.log(err);
+						await telegram.api.message.send(
+							ctx,
+							telegram.api.message.getChatID(ctx),
+							translate(lang.language, "about_command_show_links_error"),
+						);
 					}
 				}
 			}

@@ -74,15 +74,17 @@ const set = async (): Promise<void> => {
 			id: telegram.api.message.getUserID(ctx),
 		});
 
-		about.step = ctx?.match && ctx?.match[0] ? ctx.match[0] : "";
+		about.step = ctx?.match?.[0] ?? "done";
 
 		await db.about.update({ id: about.id }, about);
 
-		await telegram.api.message.send(
-			ctx,
-			telegram.api.message.getChatID(ctx),
-			translate(lang.language, `set_command_${about.step.replace("set_", "")}`),
-		);
+		if (about.step.startsWith("set_")) {
+			await telegram.api.message.send(
+				ctx,
+				telegram.api.message.getChatID(ctx),
+				translate(lang.language, `set_command_${about.step.replace("set_", "")}`),
+			);
+		}
 	});
 };
 

@@ -44,10 +44,11 @@
 	"set_command_privacy": "Write the list of users (separated from comma) which can use the command /about to show your links, example: <b>@user1, @user2</b>\n\nType in \"<b>public profile</b>\" if you want to allow everyone to use the command /about and see your social media",
 	"set_command_privacy_done": "🔐 DONE! You set privacy properly!",
 	"set_command_privacy_skip": "public profile",
-	"hears_command_privacy_not_auth": "You are not authorized by the user to see its links and social, ask you to insert you in the command list of /privacy",
+	"about_command_show_links_error": "🚨 One of the URLs is not valid, it must start with https// and end with .net, .com or other valid domain value. Example: https://fb.me/ptkdev",
+	"hears_command_privacy_not_auth": "🔐 You are not authorized by the user to see its links and social, ask you to insert you in the command list of /privacy",
 	"about_command_show_links": "🌟 The available profiles of @##username## are:",
-	"hears_command_bad_url": "The inserted URL is invalid, it must start with <b>https://</b>, example: https://example.it",
-	"about_command_user_not_found": "The user @##username## did not set his profiles, ask him to do it by typing in private to the bot: @##bot_nickname##",
-	"start_command_nickname_empty": "You have not set a nickname in your telegram account: enter the settings of the app and insert one, then you do again /start",
+	"hears_command_bad_url": "🚨 The inserted URL is invalid, it must start with <b>https://</b>, example: https://example.it",
+	"about_command_user_not_found": "😿 The user @##username## did not set his profiles, ask him to do it by typing in private to the bot: @##bot_nickname##",
+	"start_command_nickname_empty": "🚷 You have not set a nickname in your telegram account: enter the settings of the app and insert one, then you do again /start",
 	"start_command_intro_group": "This bot allows you to share your social profiles and links with Telegram users. Use the command /about @nickname to see a user's profiles and links, for example:\n\n/about @ptkdev\n\nType in private to @##bot_nickname## to set your links and social media."
 }

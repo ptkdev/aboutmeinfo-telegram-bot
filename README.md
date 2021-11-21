@@ -23,6 +23,7 @@ About Me Info Bot: Share your social media and links on Telegram
 ## 📎 Menu
 
 -   💡 [Features](#-features)
+-   👔 [Screenshot](#-screenshot)
 -   🚀 [How to use](#-installation)
 -   🎮 [How to play](#-how-to-play)
 -   🔨 [Developer Mode](#-developer-mode)
@@ -50,6 +51,10 @@ About Me Info Bot: Share your social media and links on Telegram
 -   [✔️] Share your linkedin profile on Telegram
 -   [✔️] Share your onlyfans profile on Telegram
 -   [✔️] Share your website on Telegram
+
+## 👔 Screenshot
+
+[![aboutmeinfo-telegram-bot](https://raw.githubusercontent.com/ptkdev/aboutmeinfo-telegram-bot/main/.github/assets/assets/screenshot.png)](https://raw.githubusercontent.com/ptkdev/aboutmeinfo-telegram-bot/main/.github/assets/screenshot.png)
 
 ## 🚀 Installation
 

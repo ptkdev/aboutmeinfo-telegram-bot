@@ -54,7 +54,7 @@ About Me Info Bot: Share your social media and links on Telegram
 
 ## 👔 Screenshot
 
-[![aboutmeinfo-telegram-bot](https://raw.githubusercontent.com/ptkdev/aboutmeinfo-telegram-bot/main/.github/assets/assets/screenshot.png)](https://raw.githubusercontent.com/ptkdev/aboutmeinfo-telegram-bot/main/.github/assets/screenshot.png)
+[![aboutmeinfo-telegram-bot](https://raw.githubusercontent.com/ptkdev/aboutmeinfo-telegram-bot/main/.github/assets/screenshot.png)](https://raw.githubusercontent.com/ptkdev/aboutmeinfo-telegram-bot/main/.github/assets/screenshot.png)
 
 ## 🚀 Installation
 

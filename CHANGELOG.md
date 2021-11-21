@@ -1,4 +1,4 @@
-# v0.5.0 (TBD, 2021)
+# v0.5.0 (November 21, 2021)
 
 -   Porting: from Telegraf to Grammy Framework
 -   Fix: /about command case-sensitive issue

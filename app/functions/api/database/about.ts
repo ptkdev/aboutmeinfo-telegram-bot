@@ -95,7 +95,7 @@ const update = async (search: Record<string, number | string | boolean>, about: 
  * @return {AboutInterface[]} about.
 
  */
-const get = async (search: Record<string, number | string | boolean>): Promise<AboutInterface> => {
+const get = async (search: Record<string, number | string | boolean | { $regex: RegExp }>): Promise<AboutInterface> => {
 	try {
 		const about = await query.findOne(search, { _id: 0, __v: 0 }, function (error: string) {
 			if (error) {

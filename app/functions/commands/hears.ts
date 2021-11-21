@@ -1,5 +1,5 @@
 /**
- * Telegraf Hears
+ * Grammy Telegram API Framework Hears
  * =====================
  *
  * @contributors: Patryk Rzucidło [@ptkdev] <support@ptkdev.io> (https://ptk.dev)
@@ -8,7 +8,7 @@
  * @license: MIT License
  *
  */
-import bot from "@app/core/telegraf";
+import bot from "@app/core/token";
 import translate from "@translations/translate";
 import db from "@routes/api/database";
 import telegram from "@routes/api/telegram";
@@ -21,7 +21,7 @@ import logger from "@app/functions/utils/logger";
  *
  */
 const hears = async (): Promise<void> => {
-	bot.on("text", async (ctx) => {
+	bot.on("message:text", async (ctx) => {
 		logger.info("hears: text", "hears.ts:on(text)");
 
 		const lang = await db.settings.get({

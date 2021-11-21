@@ -8,8 +8,8 @@
  * @license: MIT License
  *
  */
-import bot from "@app/core/telegraf";
-import { Markup } from "telegraf";
+import bot from "@app/core/token";
+import { InlineKeyboard } from "grammy";
 import translate from "@translations/translate";
 import db from "@routes/api/database";
 import telegram from "@routes/api/telegram";
@@ -39,7 +39,11 @@ const about = async (): Promise<void> => {
 			);
 		} else {
 			const username = telegram.api.message.getText(ctx).replace("/about ", "").replace("@", "").trim();
-			const account = await db.about.get({ username: username });
+			const account = await db.about.get({
+				username: {
+					$regex: new RegExp(username, "i"),
+				},
+			});
 			if (
 				account.username === "" ||
 				(account.facebook === "" &&
@@ -81,95 +85,64 @@ const about = async (): Promise<void> => {
 					);
 				} else {
 					try {
+						const buttons = new InlineKeyboard();
+
+						account.facebook !== "" &&
+							buttons
+								.url(translate(lang.language, "about_command_button_facebook"), account.facebook)
+								.row();
+
+						account.instagram !== "" &&
+							buttons
+								.url(translate(lang.language, "about_command_button_instagram"), account.instagram)
+								.row();
+
+						account.twitter !== "" &&
+							buttons
+								.url(translate(lang.language, "about_command_button_twitter"), account.twitter)
+								.row();
+
+						account.github !== "" &&
+							buttons.url(translate(lang.language, "about_command_button_github"), account.github).row();
+
+						account.tiktok !== "" &&
+							buttons.url(translate(lang.language, "about_command_button_tiktok"), account.tiktok).row();
+
+						account.linkedin !== "" &&
+							buttons
+								.url(translate(lang.language, "about_command_button_linkedin"), account.linkedin)
+								.row();
+
+						account.steam !== "" &&
+							buttons.url(translate(lang.language, "about_command_button_steam"), account.steam).row();
+
+						account.onlyfans !== "" &&
+							buttons
+								.url(translate(lang.language, "about_command_button_onlyfans"), account.onlyfans)
+								.row();
+
+						account.amazon !== "" &&
+							buttons.url(translate(lang.language, "about_command_button_amazon"), account.amazon).row();
+
+						account.website !== "" &&
+							buttons
+								.url(translate(lang.language, "about_command_button_website"), account.website)
+								.row();
+
 						await ctx.reply(
 							translate(lang.language, "about_command_show_links", {
 								username: username,
 							}),
-							Markup.inlineKeyboard([
-								account.facebook !== ""
-									? [
-											Markup.button.url(
-												translate(lang.language, "about_command_button_facebook"),
-												account.facebook,
-											),
-									  ]
-									: [],
-								account.instagram !== ""
-									? [
-											Markup.button.url(
-												translate(lang.language, "about_command_button_instagram"),
-												account.instagram,
-											),
-									  ]
-									: [],
-								account.twitter !== ""
-									? [
-											Markup.button.url(
-												translate(lang.language, "about_command_button_twitter"),
-												account.twitter,
-											),
-									  ]
-									: [],
-								account.github !== ""
-									? [
-											Markup.button.url(
-												translate(lang.language, "about_command_button_github"),
-												account.github,
-											),
-									  ]
-									: [],
-								account.tiktok !== ""
-									? [
-											Markup.button.url(
-												translate(lang.language, "about_command_button_tiktok"),
-												account.tiktok,
-											),
-									  ]
-									: [],
-								account.linkedin !== ""
-									? [
-											Markup.button.url(
-												translate(lang.language, "about_command_button_linkedin"),
-												account.linkedin,
-											),
-									  ]
-									: [],
-								account.steam !== ""
-									? [
-											Markup.button.url(
-												translate(lang.language, "about_command_button_steam"),
-												account.steam,
-											),
-									  ]
-									: [],
-								account.onlyfans !== ""
-									? [
-											Markup.button.url(
-												translate(lang.language, "about_command_button_onlyfans"),
-												account.onlyfans,
-											),
-									  ]
-									: [],
-								account.amazon !== ""
-									? [
-											Markup.button.url(
-												translate(lang.language, "about_command_button_amazon"),
-												account.amazon,
-											),
-									  ]
-									: [],
-								account.website !== ""
-									? [
-											Markup.button.url(
-												translate(lang.language, "about_command_button_website"),
-												account.website,
-											),
-									  ]
-									: [],
-							]),
+							{
+								reply_markup: buttons,
+							},
 						);
 					} catch (err) {
-						console.log(err);
+						await telegram.api.message.send(
+							ctx,
+							telegram.api.message.getChatID(ctx),
+							translate(lang.language, "about_command_show_links_error"),
+						);
 					}
 				}
 			}

@@ -1,4 +1,3 @@
-import quit from "@app/functions/commands/quit";
 import start from "@app/functions/commands/start";
 import launch from "@app/functions/commands/launch";
 import settings from "@app/functions/commands/settings";
@@ -8,7 +7,6 @@ import hears from "@app/functions/commands/hears";
 import privacy from "@app/functions/commands/privacy";
 
 const commands = {
-	quit,
 	start,
 	launch,
 	settings,
@@ -18,5 +16,5 @@ const commands = {
 	privacy,
 };
 
-export { quit, start, launch, hears, settings, set, about, privacy };
+export { start, launch, hears, settings, set, about, privacy };
 export default commands;

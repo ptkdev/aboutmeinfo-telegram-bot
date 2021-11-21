@@ -8,8 +8,8 @@
  * @license: MIT License
  *
  */
-import { Markup } from "telegraf";
-import bot from "@app/core/telegraf";
+import { InlineKeyboard } from "grammy";
+import bot from "@app/core/token";
 import translate from "@translations/translate";
 import db from "@routes/api/database";
 import telegram from "@routes/api/telegram";
@@ -37,46 +37,35 @@ const set = async (): Promise<void> => {
 				}),
 			);
 		} else {
-			await ctx.reply(
-				translate(lang.language, "set_select_button"),
-				Markup.inlineKeyboard([
-					[
-						Markup.button.callback(
-							translate(lang.language, "about_command_button_facebook"),
-							"set_facebook",
-						),
-						Markup.button.callback(
-							translate(lang.language, "about_command_button_instagram"),
-							"set_instagram",
-						),
-						Markup.button.callback(translate(lang.language, "about_command_button_twitter"), "set_twitter"),
-					],
+			const buttons = new InlineKeyboard();
 
-					[
-						Markup.button.callback(translate(lang.language, "about_command_button_tiktok"), "set_tiktok"),
-						Markup.button.callback(translate(lang.language, "about_command_button_steam"), "set_steam"),
-					],
-					[
-						Markup.button.callback(
-							translate(lang.language, "about_command_button_onlyfans"),
-							"set_onlyfans",
-						),
-						Markup.button.callback(translate(lang.language, "about_command_button_amazon"), "set_amazon"),
-					],
-					[
-						Markup.button.callback(translate(lang.language, "about_command_button_github"), "set_github"),
-						Markup.button.callback(
-							translate(lang.language, "about_command_button_linkedin"),
-							"set_linkedin",
-						),
-						Markup.button.callback(translate(lang.language, "about_command_button_website"), "set_website"),
-					],
-				]),
-			);
+			buttons.text(translate(lang.language, "about_command_button_facebook"), "set_facebook");
+			buttons.text(translate(lang.language, "about_command_button_instagram"), "set_instagram");
+			buttons.text(translate(lang.language, "about_command_button_twitter"), "set_twitter");
+
+			buttons.row();
+
+			buttons.text(translate(lang.language, "about_command_button_tiktok"), "set_tiktok");
+			buttons.text(translate(lang.language, "about_command_button_steam"), "set_steam");
+
+			buttons.row();
+
+			buttons.text(translate(lang.language, "about_command_button_onlyfans"), "set_onlyfans");
+			buttons.text(translate(lang.language, "about_command_button_amazon"), "set_amazon");
+
+			buttons.row();
+
+			buttons.text(translate(lang.language, "about_command_button_github"), "set_github");
+			buttons.text(translate(lang.language, "about_command_button_linkedin"), "set_linkedin");
+			buttons.text(translate(lang.language, "about_command_button_website"), "set_website");
+
+			await ctx.reply(translate(lang.language, "set_select_button"), {
+				reply_markup: buttons,
+			});
 		}
 	});
 
-	bot.action(/^(set_\w*)$/, async (ctx) => {
+	bot.callbackQuery(/^(set_\w*)$/, async (ctx) => {
 		const lang = await db.settings.get({
 			group_id: telegram.api.message.getChatID(ctx),
 		});
@@ -85,15 +74,17 @@ const set = async (): Promise<void> => {
 			id: telegram.api.message.getUserID(ctx),
 		});
 
-		about.step = ctx.match[0];
+		about.step = ctx?.match?.[0] ?? "done";
 
 		await db.about.update({ id: about.id }, about);
 
-		await telegram.api.message.send(
-			ctx,
-			telegram.api.message.getChatID(ctx),
-			translate(lang.language, `set_command_${about.step.replace("set_", "")}`),
-		);
+		if (about.step.startsWith("set_")) {
+			await telegram.api.message.send(
+				ctx,
+				telegram.api.message.getChatID(ctx),
+				translate(lang.language, `set_command_${about.step.replace("set_", "")}`),
+			);
+		}
 	});
 };
 

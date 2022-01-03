@@ -102,7 +102,7 @@
 					"color": "#ea4aaa",
 					"label": "donate",
 					"message": "sponsors",
-					"title": "Donate Github Sponsors",
+					"title": "Donate GitHub Sponsors",
 					"style": "for-the-badge",
 					"logo": "github",
 					"platform": "shields"

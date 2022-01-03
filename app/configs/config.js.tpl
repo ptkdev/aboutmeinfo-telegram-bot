@@ -8,7 +8,7 @@ module.exports = {
 		token: "BOT_TOKEN"
 	},
 	database: { URL: "mongodb://localhost:27017/aboutmeinfodb" },
-	logger: {
+	log: {
 		path: { debug_log: "./logs/debug.log", "error_log": "./logs/errors.log" },
 		language: "en",
 		colors: "enabled",

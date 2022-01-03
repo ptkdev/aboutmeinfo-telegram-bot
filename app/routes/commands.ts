@@ -5,6 +5,7 @@ import set from "@app/functions/commands/set";
 import about from "@app/functions/commands/about";
 import hears from "@app/functions/commands/hears";
 import privacy from "@app/functions/commands/privacy";
+import version from "@app/functions/commands/version";
 
 const commands = {
 	start,
@@ -14,7 +15,8 @@ const commands = {
 	hears,
 	about,
 	privacy,
+	version,
 };
 
-export { start, launch, hears, settings, set, about, privacy };
+export { start, launch, hears, settings, set, about, privacy, version };
 export default commands;

@@ -50,5 +50,6 @@
 	"hears_command_bad_url": "🚨 The inserted URL is invalid, it must start with <b>https://</b>, example: https://example.it",
 	"about_command_user_not_found": "😿 The user @{{username}} did not set his profiles, ask him to do it by typing in private to the bot: @{{bot_nickname}}",
 	"start_command_nickname_empty": "🚷 You have not set a nickname in your telegram account: enter the settings of the app and insert one, then you do again /start",
-	"start_command_intro_group": "This bot allows you to share your social profiles and links with Telegram users. Use the command /about @nickname to see a user's profiles and links, for example:\n\n/about @ptkdev\n\nType in private to @{{bot_nickname}} to set your links and social media."
+	"start_command_intro_group": "This bot allows you to share your social profiles and links with Telegram users. Use the command /about @nickname to see a user's profiles and links, for example:\n\n/about @ptkdev\n\nType in private to @{{bot_nickname}} to set your links and social media.",
+	"ral_command": "The RAL of {{username}} is {{ral}}k!"
 }

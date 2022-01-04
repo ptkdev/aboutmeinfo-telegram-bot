@@ -15,6 +15,7 @@ interface TranslateParamsInterface {
 	bot_username?: string;
 	first_name?: string;
 	bot_nickname?: string;
+	ral?: number;
 }
 
 /**

@@ -22,6 +22,7 @@ import logger from "@app/functions/utils/logger";
 	await commands.about();
 	await commands.settings();
 	await commands.set();
+	await commands.ral();
 	await commands.version();
 	await commands.privacy();
 	await commands.hears();

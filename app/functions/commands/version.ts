@@ -1,6 +1,15 @@
+/**
+ * Version
+ * =====================
+ *
+ * @contributors: Patryk Rzucidło [@ptkdev] <support@ptkdev.io> (https://ptk.dev)
+ *                Alì Shadman [@AliShadman95] (https://github.com/AliShadman95)
+ *
+ * @license: MIT License
+ *
+ */
 import bot from "@app/core/token";
-import { version as V } from "../../../package.json";
-import version_json from "@app/configs/version.json";
+import v from "@app/configs/version.json";
 import telegram from "@routes/api/telegram";
 import logger from "@app/functions/utils/logger";
 
@@ -17,7 +26,7 @@ const version = async (): Promise<void> => {
 		await telegram.api.message.send(
 			ctx,
 			telegram.api.message.getChatID(ctx),
-			`v${V || "0.0.0"} (${version_json?.gitCommitHash || ""})`,
+			`v${v?.semver || "0.0.0"} (${v?.hash || ""})`,
 		);
 	});
 };

@@ -15,6 +15,7 @@ interface TranslateParamsInterface {
 	bot_username?: string;
 	first_name?: string;
 	bot_nickname?: string;
+	ral?: number;
 }
 
 /**
@@ -31,7 +32,7 @@ interface TranslateParamsInterface {
  */
 const replaceParams = (text: string, language_params: TranslateParamsInterface): string => {
 	for (const [key, value] of Object.entries(language_params)) {
-		text = text.replace(`##${key}##`, value);
+		text = text.replace(`{{${key}}}`, value);
 	}
 
 	return text;
@@ -49,7 +50,11 @@ const replaceParams = (text: string, language_params: TranslateParamsInterface):
  *
  */
 const check = (lang: string, language_id: string): string => {
-	return translations[lang || "en"][language_id];
+	return (
+		translations?.[lang]?.[language_id] ??
+		translations?.["en"]?.[language_id] ??
+		`translation id: ${language_id} in ${lang}.json is undefined`
+	);
 };
 
 /**

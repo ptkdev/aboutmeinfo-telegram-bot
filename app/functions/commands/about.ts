@@ -39,11 +39,14 @@ const about = async (): Promise<void> => {
 			);
 		} else {
 			const username = telegram.api.message.getText(ctx).replace("/about ", "").replace("@", "").trim();
+			const current_user = telegram.api.message.getUsername(ctx);
+
 			const account = await db.about.get({
 				username: {
 					$regex: new RegExp(username, "i"),
 				},
 			});
+
 			if (
 				account.username === "" ||
 				(account.facebook === "" &&
@@ -65,8 +68,7 @@ const about = async (): Promise<void> => {
 						bot_nickname: telegram.api.bot.getUsername(ctx),
 					}),
 				);
-			} else {
-				const current_user = telegram.api.message.getUsername(ctx);
+			} else if (account.privacy !== "") {
 				let privacy = 0;
 				account.privacy.split(",").map((item) => {
 					if (item.trim().replace("@", "") === current_user) {
@@ -83,67 +85,57 @@ const about = async (): Promise<void> => {
 							bot_nickname: telegram.api.bot.getUsername(ctx),
 						}),
 					);
-				} else {
-					try {
-						const buttons = new InlineKeyboard();
+				}
+			} else {
+				try {
+					const buttons = new InlineKeyboard();
 
-						account.facebook !== "" &&
-							buttons
-								.url(translate(lang.language, "about_command_button_facebook"), account.facebook)
-								.row();
+					account.facebook !== "" &&
+						buttons.url(translate(lang.language, "about_command_button_facebook"), account.facebook).row();
 
-						account.instagram !== "" &&
-							buttons
-								.url(translate(lang.language, "about_command_button_instagram"), account.instagram)
-								.row();
+					account.instagram !== "" &&
+						buttons
+							.url(translate(lang.language, "about_command_button_instagram"), account.instagram)
+							.row();
 
-						account.twitter !== "" &&
-							buttons
-								.url(translate(lang.language, "about_command_button_twitter"), account.twitter)
-								.row();
+					account.twitter !== "" &&
+						buttons.url(translate(lang.language, "about_command_button_twitter"), account.twitter).row();
 
-						account.github !== "" &&
-							buttons.url(translate(lang.language, "about_command_button_github"), account.github).row();
+					account.github !== "" &&
+						buttons.url(translate(lang.language, "about_command_button_github"), account.github).row();
 
-						account.tiktok !== "" &&
-							buttons.url(translate(lang.language, "about_command_button_tiktok"), account.tiktok).row();
+					account.tiktok !== "" &&
+						buttons.url(translate(lang.language, "about_command_button_tiktok"), account.tiktok).row();
 
-						account.linkedin !== "" &&
-							buttons
-								.url(translate(lang.language, "about_command_button_linkedin"), account.linkedin)
-								.row();
+					account.linkedin !== "" &&
+						buttons.url(translate(lang.language, "about_command_button_linkedin"), account.linkedin).row();
 
-						account.steam !== "" &&
-							buttons.url(translate(lang.language, "about_command_button_steam"), account.steam).row();
+					account.steam !== "" &&
+						buttons.url(translate(lang.language, "about_command_button_steam"), account.steam).row();
 
-						account.onlyfans !== "" &&
-							buttons
-								.url(translate(lang.language, "about_command_button_onlyfans"), account.onlyfans)
-								.row();
+					account.onlyfans !== "" &&
+						buttons.url(translate(lang.language, "about_command_button_onlyfans"), account.onlyfans).row();
 
-						account.amazon !== "" &&
-							buttons.url(translate(lang.language, "about_command_button_amazon"), account.amazon).row();
+					account.amazon !== "" &&
+						buttons.url(translate(lang.language, "about_command_button_amazon"), account.amazon).row();
 
-						account.website !== "" &&
-							buttons
-								.url(translate(lang.language, "about_command_button_website"), account.website)
-								.row();
+					account.website !== "" &&
+						buttons.url(translate(lang.language, "about_command_button_website"), account.website).row();
 
-						await ctx.reply(
-							translate(lang.language, "about_command_show_links", {
-								username: username,
-							}),
-							{
-								reply_markup: buttons,
-							},
-						);
-					} catch (err) {
-						await telegram.api.message.send(
-							ctx,
-							telegram.api.message.getChatID(ctx),
-							translate(lang.language, "about_command_show_links_error"),
-						);
-					}
+					await ctx.reply(
+						translate(lang.language, "about_command_show_links", {
+							username: username,
+						}),
+						{
+							reply_markup: buttons,
+						},
+					);
+				} catch (err) {
+					await telegram.api.message.send(
+						ctx,
+						telegram.api.message.getChatID(ctx),
+						translate(lang.language, "about_command_show_links_error"),
+					);
 				}
 			}
 		}

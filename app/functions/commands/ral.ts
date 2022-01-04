@@ -31,7 +31,7 @@ const version = async (): Promise<void> => {
 				ctx,
 				telegram.api.message.getChatID(ctx),
 				translate(lang.language, "ral_command", {
-					username: telegram.api.message.getText(ctx).replace("/ral ", "").trim(),
+					username: telegram.api.message.getText(ctx).replace("/ral ", "").replace(/_/g, "\\_").trim(),
 					ral: Math.floor(Math.random() * (120 - 18) + 18),
 				}),
 				{ parse_mode: "MarkdownV2" },

@@ -17,14 +17,26 @@ const version = async (): Promise<void> => {
 			group_id: telegram.api.message.getChatID(ctx),
 		});
 
-		await telegram.api.message.send(
-			ctx,
-			telegram.api.message.getChatID(ctx),
-			translate(lang.language, "ral_command", {
-				username: telegram.api.message.getText(ctx).replace("/ral ", "").trim(),
-				ral: Math.floor(Math.random() * (120 - 18) + 18),
-			}),
-		);
+		if (
+			telegram.api.message.getText(ctx).trim() === "/ral" ||
+			telegram.api.message.getText(ctx).trim() === `/ral@${telegram.api.bot.getUsername(ctx)}`
+		) {
+			await telegram.api.message.send(
+				ctx,
+				telegram.api.message.getChatID(ctx),
+				translate(lang.language, "ral_command_error"),
+			);
+		} else {
+			await telegram.api.message.send(
+				ctx,
+				telegram.api.message.getChatID(ctx),
+				translate(lang.language, "ral_command", {
+					username: telegram.api.message.getText(ctx).replace("/ral ", "").replace(/_/g, "\\_").trim(),
+					ral: Math.floor(Math.random() * (120 - 18) + 18),
+				}),
+				{ parse_mode: "MarkdownV2" },
+			);
+		}
 	});
 };
 

@@ -24,10 +24,9 @@
 		"node": ">=14.0.0"
 	},
 	"scripts": {
-		"init": "npm install && husky install",
 		"init:token": "ts-node scripts/configs.ts && ts-node scripts/init.ts",
 		"setup": "ts-node --skip-project scripts/setup.ts && ts-node --skip-project scripts/changelog.ts && npm run pre-commit",
-		"start": "npm run git-hash && node dist/core/bot.js",
+		"start": "npm run git-hash && npm run git-hash && node dist/core/bot.js",
 		"start-pm2": "npm run git-hash && pm2 start .pm2-process.json",
 		"stop-pm2": "npm run git-hash && pm2 stop .pm2-process.json",
 		"dev": "npm run git-hash && ts-node scripts/configs.ts && ts-node scripts/rmdist.ts && nodemon --exec 'ts-node app/core/bot.ts'",
@@ -44,7 +43,10 @@
 		"git-pull-upstream": "git pull upstream main && git pull upstream beta && git pull upstream nightly",
 		"git-pull": "git pull --recursive",
 		"git-hash": "ts-node scripts/githash.ts",
+		"git-hash": "ts-node scripts/githash.ts",
 		"git-ignore-reset": "git rm -r --cached . && git add . && git commit -m \"[Fix] Removing all files in .gitignore\"",
+		"github-workflow-next-version": "ts-node scripts/version.ts",
+		"github-workflow-changelog": "ts-node scripts/changelog_release.ts",
 		"github-workflow-next-version": "ts-node scripts/version.ts",
 		"github-workflow-changelog": "ts-node scripts/changelog_release.ts",
 		"npm-publish-main": "git checkout main && npm publish",
@@ -57,7 +59,7 @@
 		"pkg-update": "npm update",
 		"pkg-upgrade": "npx --yes npm-check-updates -u && npm install && husky install",
 		"postinstall": "rm ./node_modules/mongoose/index.d.ts",
-		"prepare": "ts-patch install -s"
+		"prepare": "ts-patch install -s && husky install"
 	},
 	"dependencies": {
 		"@ptkdev/logger": "^1.8.0",

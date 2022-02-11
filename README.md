@@ -75,7 +75,7 @@ About Me Info Bot: Share your social media and links on Telegram
 1. Clone this repository or download [nightly](https://github.com/ptkdev/aboutmeinfo-telegram-bot/archive/nightly.zip), [beta](https://github.com/ptkdev/aboutmeinfo-telegram-bot/archive/beta.zip) or [stable](https://github.com/ptkdev/aboutmeinfo-telegram-bot/archive/main.zip).
 2. Write to [@botfather](https://t.me/botfather) on telegram and create new bot (save token and set bot username)
 3. Run with correct values: `npm run init:token --username name_bot --token 1234:asdfghjkl`
-4. Run `npm run init`
+4. Run `npm install`
 5. Run `npm run dev`
 6. Write `/start` on telegram bot.
 
@@ -84,7 +84,7 @@ About Me Info Bot: Share your social media and links on Telegram
 Deploy bot to your server and:
 
 1. Run with correct values: `npm run init:token --token asdfghjkl`
-2. Run init `npm run init`
+2. Run init npm install
 3. Generate release `npm run release`
 4. Start bot `npm run start-pm2`
 
@@ -100,7 +100,7 @@ Thanks to all our backers! 🙏 Donate 3$ or more on [paypal](https://www.paypal
 
 ## 👨‍💻 Contributing
 
-I ❤️ contributions! I will happily accept your pull request! Translations, grammatical corrections (GrammarNazi you are welcome! Yes my English is bad, sorry), etc... Do not be afraid, if the code is not perfect we will work together 👯 and remember to insert your name in `.all-contributorsrc` and `package.json` file.
+I ❤️ contributions! I will happily accept your pull request! (**IMPORTANT**: Only to nightly branch!) Translations, grammatical corrections (GrammarNazi you are welcome! Yes my English is bad, sorry), etc... Do not be afraid, if the code is not perfect we will work together 👯 and remember to insert your name in `.all-contributorsrc` and `package.json` file.
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 

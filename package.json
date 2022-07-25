@@ -2,7 +2,7 @@
 	"name": "@ptkdev/aboutmeinfo-telegram-bot",
 	"displayName": "About Me Info",
 	"description": "Share your social media and links on Telegram",
-	"version": "0.6.2-nightly.196",
+	"version": "0.6.2-nightly.197",
 	"main": "dist/core/bot.js",
 	"publishConfig": {
 		"access": "public"

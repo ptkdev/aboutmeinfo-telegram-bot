@@ -4,7 +4,7 @@
 
 <!-- all-shields/header-badges:START -->
 
-[![v0.6.2](https://img.shields.io/badge/version-v0.6.2-lightgray.svg?style=flat&logo=)](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/CHANGELOG.md) [![](https://img.shields.io/npm/v/@ptkdev/aboutmeinfo-telegram-bot?color=CC3534&logo=npm)](https://www.npmjs.com/package/@ptkdev/aboutmeinfo-telegram-bot) [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat&logo=license)](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/LICENSE.md) [![Language: TypeScript](https://img.shields.io/badge/language-typescript-blue.svg?style=flat&logo=typescript)](https://www.typescriptlang.org/) [![Framework: Grammy](https://img.shields.io/badge/powered%20by-grammy-009dca.svg?style=flat&logo=telegram)](https://grammy.dev/) [![ECMAScript: 2019](https://img.shields.io/badge/ES-9-F7DF1E.svg?style=flat&logo=javascript)](https://github.com/tc39/ecma262) [![Discord Server](https://discordapp.com/api/guilds/383373985666301975/embed.png)](https://discord.ptkdev.io)
+[![v0.6.3-beta.1](https://img.shields.io/badge/version-v0.6.3--beta.1-lightgray.svg?style=flat&logo=)](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/CHANGELOG.md) [![](https://img.shields.io/npm/v/@ptkdev/aboutmeinfo-telegram-bot?color=CC3534&logo=npm)](https://www.npmjs.com/package/@ptkdev/aboutmeinfo-telegram-bot) [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat&logo=license)](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/LICENSE.md) [![Language: TypeScript](https://img.shields.io/badge/language-typescript-blue.svg?style=flat&logo=typescript)](https://www.typescriptlang.org/) [![Framework: Grammy](https://img.shields.io/badge/powered%20by-grammy-009dca.svg?style=flat&logo=telegram)](https://grammy.dev/) [![ECMAScript: 2019](https://img.shields.io/badge/ES-9-F7DF1E.svg?style=flat&logo=javascript)](https://github.com/tc39/ecma262) [![Discord Server](https://discordapp.com/api/guilds/383373985666301975/embed.png)](https://discord.ptkdev.io)
 
 <!-- all-shields/header-badges:END -->
 
@@ -75,7 +75,7 @@ About Me Info Bot: Share your social media and links on Telegram
 1. Clone this repository or download [nightly](https://github.com/ptkdev/aboutmeinfo-telegram-bot/archive/nightly.zip), [beta](https://github.com/ptkdev/aboutmeinfo-telegram-bot/archive/beta.zip) or [stable](https://github.com/ptkdev/aboutmeinfo-telegram-bot/archive/main.zip).
 2. Write to [@botfather](https://t.me/botfather) on telegram and create new bot (save token and set bot username)
 3. Run with correct values: `npm run init:token --username name_bot --token 1234:asdfghjkl`
-4. Run `npm run init`
+4. Run `npm install`
 5. Run `npm run dev`
 6. Write `/start` on telegram bot.
 
@@ -84,7 +84,7 @@ About Me Info Bot: Share your social media and links on Telegram
 Deploy bot to your server and:
 
 1. Run with correct values: `npm run init:token --token asdfghjkl`
-2. Run init `npm run init`
+2. Run init npm install
 3. Generate release `npm run release`
 4. Start bot `npm run start-pm2`
 
@@ -100,7 +100,7 @@ Thanks to all our backers! 🙏 Donate 3$ or more on [paypal](https://www.paypal
 
 ## 👨‍💻 Contributing
 
-I ❤️ contributions! I will happily accept your pull request! Translations, grammatical corrections (GrammarNazi you are welcome! Yes my English is bad, sorry), etc... Do not be afraid, if the code is not perfect we will work together 👯 and remember to insert your name in `.all-contributorsrc` and `package.json` file.
+I ❤️ contributions! I will happily accept your pull request! (**IMPORTANT**: Only to nightly branch!) Translations, grammatical corrections (GrammarNazi you are welcome! Yes my English is bad, sorry), etc... Do not be afraid, if the code is not perfect we will work together 👯 and remember to insert your name in `.all-contributorsrc` and `package.json` file.
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -146,4 +146,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 -   Images and logos have **CC BY-NC 4.0 License**
 -   Documentations and Translations have **CC BY 4.0 License**
 
-###### Copyleft (c) 2021 [Patryk Rzucidło](https://ptk.dev) ([@PTKDev](https://twitter.com/ptkdev)) <[support@ptkdev.io](mailto:support@ptkdev.io)>
+###### Copyleft (c) 2022 [Patryk Rzucidło](https://ptk.dev) ([@PTKDev](https://twitter.com/ptkdev)) <[support@ptkdev.io](mailto:support@ptkdev.io)>

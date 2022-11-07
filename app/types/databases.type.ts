@@ -17,7 +17,7 @@
  *
  * @Context: telegram.api.message.getFullUser(ctx)
  *
- * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.type.ts)
+ * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.interfaces.ts)
  *
  * @param { number } id - telegram
  * @param { boolean } is_bot - is user a bot
@@ -36,7 +36,7 @@ export interface TelegramUserInterface {
 	 * Telegram User Interface
 	 * =====================
 	 *
-	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.type.ts)
+	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.interfaces.ts)
 	 *
 	 * @param { number } id - telegram
 	 *
@@ -46,7 +46,7 @@ export interface TelegramUserInterface {
 	 * User Interface
 	 * =====================
 	 *
-	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.type.ts)
+	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.interfaces.ts)
 	 *
 	 * @param { boolean } is_bot - is user a bot
 	 *
@@ -56,7 +56,7 @@ export interface TelegramUserInterface {
 	 * User Interface
 	 * =====================
 	 *
-	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.type.ts)
+	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.interfaces.ts)
 	 *
 	 * @param { string } first_name - user name from telegram
 	 *
@@ -66,7 +66,7 @@ export interface TelegramUserInterface {
 	 * User Interface
 	 * =====================
 	 *
-	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.type.ts)
+	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.interfaces.ts)
 	 *
 	 * @param { string } username - user username from telegram
 	 *
@@ -76,7 +76,7 @@ export interface TelegramUserInterface {
 	 * User Interface
 	 * =====================
 	 *
-	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.type.ts)
+	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.interfaces.ts)
 	 *
 	 * @param { string } language_code - user code language from OS
 	 *
@@ -86,7 +86,7 @@ export interface TelegramUserInterface {
 	 * User Interface
 	 * =====================
 	 *
-	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.type.ts)
+	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.interfaces.ts)
 	 *
 	 * @param { string } question - user submitted question
 	 *
@@ -96,7 +96,7 @@ export interface TelegramUserInterface {
 	 * User Interface
 	 * =====================
 	 *
-	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.type.ts)
+	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.interfaces.ts)
 	 *
 	 * @param { string } description - user submitted question tip
 	 *
@@ -106,7 +106,7 @@ export interface TelegramUserInterface {
 	 * User Interface
 	 * =====================
 	 *
-	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.type.ts)
+	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.interfaces.ts)
 	 *
 	 * @param { number } score - user current score
 	 *
@@ -116,7 +116,7 @@ export interface TelegramUserInterface {
 	 * User Interface
 	 * =====================
 	 *
-	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.type.ts)
+	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.interfaces.ts)
 	 *
 	 * @param { number } group_id - users group id
 	 *
@@ -126,7 +126,7 @@ export interface TelegramUserInterface {
 	 * User Interface
 	 * =====================
 	 *
-	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.type.ts)
+	 * @interface [TelegramUserInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/webcomponent/types/databases.interfaces.ts)
 	 *
 	 * @param { string } error - error message
 	 *
@@ -138,7 +138,7 @@ export interface TelegramUserInterface {
  * SettingsInterface
  * =====================
  *
- * @interface [SettingsInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/types/game.type.ts)
+ * @interface [SettingsInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/types/game.interfaces.ts)
  *
  * @param { string } language - language
  * @param { boolean } pin_message - pin message to the chat
@@ -176,7 +176,7 @@ export interface SettingsInterface {
  * AboutInterface
  * =====================
  *
- * @interface [SettingsInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/types/game.type.ts)
+ * @interface [SettingsInterface](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/app/types/game.interfaces.ts)
  *
  * @param { string } language - language
  * @param { boolean } pin_message - pin message to the chat

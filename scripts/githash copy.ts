@@ -1,3 +1,13 @@
+/**
+ * Git Hash
+ * =====================
+ * Get version and hash of commits
+ *
+ * @contributors: Patryk Rzucidło [@ptkdev] <support@ptkdev.io> (https://ptk.dev)
+ *
+ * @license: MIT License
+ *
+ */
 import Logger from "@ptkdev/logger";
 import fs from "fs";
 import path from "path";

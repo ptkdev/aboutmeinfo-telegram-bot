@@ -122,13 +122,18 @@ const about = async (): Promise<void> => {
 					account.website !== "" &&
 						buttons.url(translate(lang.language, "about_command_button_website"), account.website).row();
 
+					const options: any = {};
+					options.reply_markup = buttons;
+					const thread_id = telegram.api.message.getThreadID(ctx);
+					if (thread_id) {
+						options.message_thread_id = thread_id;
+					}
+
 					await ctx.reply(
 						translate(lang.language, "about_command_show_links", {
 							username: username,
 						}),
-						{
-							reply_markup: buttons,
-						},
+						options,
 					);
 				} catch (err) {
 					await telegram.api.message.send(

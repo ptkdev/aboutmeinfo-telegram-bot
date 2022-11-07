@@ -47,11 +47,7 @@ const add = async (user: TelegramUserInterface): Promise<void> => {
  */
 const remove = async (search: Record<string, number | string | boolean>): Promise<void> => {
 	try {
-		await query.findOneAndDelete(search, function (error: string) {
-			if (error) {
-				logger.error(error || "");
-			}
-		});
+		await query.findOneAndDelete(search);
 	} catch (error: any) {
 		logger.error(JSON.stringify(error || ""), "users.ts:remove()");
 	}
@@ -70,11 +66,7 @@ const update = async (
 	user: TelegramUserInterface,
 ): Promise<void> => {
 	try {
-		await query.findOneAndUpdate(search, user, function (error: string) {
-			if (error) {
-				logger.error(error || "");
-			}
-		});
+		await query.findOneAndUpdate(search, user);
 	} catch (error: any) {
 		logger.error(JSON.stringify(error || ""), "users.ts:update()");
 	}
@@ -91,11 +83,7 @@ const update = async (
  */
 const get = async (search: Record<string, number | string | boolean>): Promise<TelegramUserInterface> => {
 	try {
-		const user = await query.findOne(search, { _id: 0, __v: 0 }, function (error: string) {
-			if (error) {
-				logger.error(JSON.stringify(error || ""), "users.ts:get()");
-			}
-		});
+		const user = await query.findOne(search, { _id: 0, __v: 0 });
 
 		return (await user) || new query().toJSON();
 	} catch (error: any) {

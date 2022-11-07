@@ -44,9 +44,14 @@ const settings = async (): Promise<void> => {
 			translate(lang.language, "settings_command_help"),
 		);
 
-		await ctx.reply(translate(lang.language, "settings_command_options"), {
-			reply_markup: buttons,
-		});
+		const options: any = {};
+		options.reply_markup = buttons;
+		const thread_id = telegram.api.message.getThreadID(ctx);
+		if (thread_id) {
+			options.message_thread_id = thread_id;
+		}
+
+		await ctx.reply(translate(lang.language, "settings_command_options"), options);
 	});
 
 	bot.callbackQuery("settings_languages", async (ctx) => {
@@ -58,9 +63,14 @@ const settings = async (): Promise<void> => {
 		buttons.text(translate(lang.language, "settings_command_language_english"), "settings_set_english");
 		buttons.text(translate(lang.language, "settings_command_language_italian"), "settings_set_italian");
 
-		await ctx.reply(translate(lang.language, "settings_command_switchlanguage"), {
-			reply_markup: buttons,
-		});
+		const options: any = {};
+		options.reply_markup = buttons;
+		const thread_id = telegram.api.message.getThreadID(ctx);
+		if (thread_id) {
+			options.message_thread_id = thread_id;
+		}
+
+		await ctx.reply(translate(lang.language, "settings_command_switchlanguage"), options);
 	});
 
 	bot.callbackQuery("settings_credits", async (ctx) => {
@@ -74,9 +84,14 @@ const settings = async (): Promise<void> => {
 		buttons.row();
 		buttons.url(translate(lang.language, "settings_command_ali"), "https://github.com/alishadman95/");
 
-		await ctx.reply(translate(lang.language, "settings_command_credits"), {
-			reply_markup: buttons,
-		});
+		const options: any = {};
+		options.reply_markup = buttons;
+		const thread_id = telegram.api.message.getThreadID(ctx);
+		if (thread_id) {
+			options.message_thread_id = thread_id;
+		}
+
+		await ctx.reply(translate(lang.language, "settings_command_credits"), options);
 	});
 
 	bot.callbackQuery("settings_set_english", async (ctx) => {

@@ -45,6 +45,15 @@ const getChatID = (ctx: any): number => {
 	);
 };
 
+const getThreadID = (ctx: any): number => {
+	return (
+		ctx?.update.message?.message_thread_id ||
+		ctx?.message?.message_thread_id ||
+		ctx?.update?.callback_query?.message?.message_thread_id ||
+		null
+	);
+};
+
 const getActionType = (ctx: any): string => {
 	return ctx?.update?.callback_query?.data || "";
 };
@@ -65,6 +74,10 @@ const send = async (ctx: any, group_id: number, text: string, options: any = { p
 	if (group_id && text) {
 		let message;
 
+		const thread_id = getThreadID(ctx);
+		if (thread_id) {
+			options.message_thread_id = thread_id;
+		}
 		try {
 			message = await ctx.api.sendMessage(group_id, text, options);
 			return message;
@@ -82,6 +95,11 @@ const sendPhoto = async (
 ): Promise<any> => {
 	if (group_id && photo) {
 		let message;
+
+		const thread_id = getThreadID(ctx);
+		if (thread_id) {
+			options.message_thread_id = thread_id;
+		}
 
 		try {
 			message = await ctx.api.sendPhoto(group_id, photo, options);
@@ -102,6 +120,11 @@ const pin = async (
 	logger.debug(`message_id: ${message_id}`, "message.ts:pin()");
 
 	if (group_id && message_id) {
+		const thread_id = getThreadID(ctx);
+		if (thread_id) {
+			options.message_thread_id = thread_id;
+		}
+
 		try {
 			await ctx.api.pinChatMessage(group_id, message_id, options);
 		} catch (err: any) {
@@ -114,6 +137,7 @@ export {
 	getFullUser,
 	getUsername,
 	getChatID,
+	getThreadID,
 	getText,
 	getUserID,
 	getUserFirstName,
@@ -128,6 +152,7 @@ export default {
 	getFullUser,
 	getUsername,
 	getChatID,
+	getThreadID,
 	getText,
 	getUserID,
 	getUserFirstName,

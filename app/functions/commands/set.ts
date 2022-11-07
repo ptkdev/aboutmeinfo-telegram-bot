@@ -59,9 +59,14 @@ const set = async (): Promise<void> => {
 			buttons.text(translate(lang.language, "about_command_button_linkedin"), "set_linkedin");
 			buttons.text(translate(lang.language, "about_command_button_website"), "set_website");
 
-			await ctx.reply(translate(lang.language, "set_select_button"), {
-				reply_markup: buttons,
-			});
+			const options: any = {};
+			options.reply_markup = buttons;
+			const thread_id = telegram.api.message.getThreadID(ctx);
+			if (thread_id) {
+				options.message_thread_id = thread_id;
+			}
+
+			await ctx.reply(translate(lang.language, "set_select_button"), options);
 		}
 	});
 

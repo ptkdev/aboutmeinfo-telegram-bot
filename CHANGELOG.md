@@ -1,6 +1,6 @@
-# v0.6.2 (Juanuary 10, 2022)
+# v0.6.3 (November 07, 2022)
 
--   Fix: CI/CD
+-   Fix: Telegram Topics
 
 <!-- all-shields/sponsors-badges:START -->
 
@@ -9,6 +9,10 @@
 <!-- all-shields/sponsors-badges:END -->
 
 # v0.6.2 (Juanuary 10, 2022)
+
+-   Fix: CI/CD
+
+# v0.6.1 (Juanuary 10, 2022)
 
 -   Fix: minor issues
 

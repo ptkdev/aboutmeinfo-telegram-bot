@@ -171,6 +171,80 @@ const hears = async (): Promise<void> => {
 								}),
 							);
 						} else {
+							about.step = "youtube";
+
+							await db.about.update({ id: about.id }, about);
+
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_youtube"),
+							);
+						}
+
+						break;
+
+					case "youtube":
+					case "set_youtube":
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://youtube.com/c/${text}`;
+						}
+
+						about.youtube = text === translate(lang.language, "set_command_skip") ? "" : text;
+
+						if (about.step.toString() === "set_youtube") {
+							about.step = "done";
+
+							await db.about.update({ id: about.id }, about);
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_done", {
+									username: telegram.api.message.getUsername(ctx),
+								}),
+							);
+						} else {
+							about.step = "discord";
+
+							await db.about.update({ id: about.id }, about);
+
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_discord"),
+							);
+						}
+
+						break;
+
+					case "discord":
+					case "set_discord":
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://discord.com/invite/${text}`;
+						}
+
+						about.discord = text === translate(lang.language, "set_command_skip") ? "" : text;
+
+						if (about.step.toString() === "set_discord") {
+							about.step = "done";
+
+							await db.about.update({ id: about.id }, about);
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_done", {
+									username: telegram.api.message.getUsername(ctx),
+								}),
+							);
+						} else {
 							about.step = "tiktok";
 
 							await db.about.update({ id: about.id }, about);

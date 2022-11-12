@@ -53,6 +53,8 @@ const about = async (): Promise<void> => {
 					account.instagram === "" &&
 					account.twitter === "" &&
 					account.linkedin === "" &&
+					account.youtube === "" &&
+					account.discord === "" &&
 					account.tiktok === "" &&
 					account.steam === "" &&
 					account.onlyfans === "" &&
@@ -109,6 +111,12 @@ const about = async (): Promise<void> => {
 
 					account.linkedin !== "" &&
 						buttons.url(translate(lang.language, "about_command_button_linkedin"), account.linkedin).row();
+
+					account.youtube !== "" &&
+						buttons.url(translate(lang.language, "about_command_button_youtube"), account.youtube).row();
+
+					account.discord !== "" &&
+						buttons.url(translate(lang.language, "about_command_button_discord"), account.discord).row();
 
 					account.steam !== "" &&
 						buttons.url(translate(lang.language, "about_command_button_steam"), account.steam).row();

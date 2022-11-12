@@ -19,6 +19,8 @@ const schema = new Schema<AboutInterface>({
 	instagram: { type: String, default: "" },
 	github: { type: String, default: "" },
 	linkedin: { type: String, default: "" },
+	youtube: { type: String, default: "" },
+	discord: { type: String, default: "" },
 	facebook: { type: String, default: "" },
 	twitter: { type: String, default: "" },
 	tiktok: { type: String, default: "" },

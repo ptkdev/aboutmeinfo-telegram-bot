@@ -50,6 +50,11 @@ const set = async (): Promise<void> => {
 
 			buttons.row();
 
+			buttons.text(translate(lang.language, "about_command_button_youtube"), "set_youtube");
+			buttons.text(translate(lang.language, "about_command_button_discord"), "set_discord");
+
+			buttons.row();
+
 			buttons.text(translate(lang.language, "about_command_button_onlyfans"), "set_onlyfans");
 			buttons.text(translate(lang.language, "about_command_button_amazon"), "set_amazon");
 

@@ -4,11 +4,11 @@
 
 <!-- all-shields/header-badges:START -->
 
-[![v0.6.3-beta.1](https://img.shields.io/badge/version-v0.6.3--beta.1-lightgray.svg?style=flat&logo=)](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/CHANGELOG.md) [![](https://img.shields.io/npm/v/@ptkdev/aboutmeinfo-telegram-bot?color=CC3534&logo=npm)](https://www.npmjs.com/package/@ptkdev/aboutmeinfo-telegram-bot) [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat&logo=license)](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/LICENSE.md) [![Language: TypeScript](https://img.shields.io/badge/language-typescript-blue.svg?style=flat&logo=typescript)](https://www.typescriptlang.org/) [![Framework: Grammy](https://img.shields.io/badge/powered%20by-grammy-009dca.svg?style=flat&logo=telegram)](https://grammy.dev/) [![ECMAScript: 2019](https://img.shields.io/badge/ES-9-F7DF1E.svg?style=flat&logo=javascript)](https://github.com/tc39/ecma262) [![Discord Server](https://discordapp.com/api/guilds/383373985666301975/embed.png)](https://discord.ptkdev.io)
+[![v0.6.4-nightly.5](https://img.shields.io/badge/version-v0.6.4--nightly.5-lightgray.svg?style=flat&logo=)](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/CHANGELOG.md) [![](https://img.shields.io/npm/v/@ptkdev/aboutmeinfo-telegram-bot?color=CC3534&logo=npm)](https://www.npmjs.com/package/@ptkdev/aboutmeinfo-telegram-bot) [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat&logo=license)](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/LICENSE.md) [![Language: TypeScript](https://img.shields.io/badge/language-typescript-blue.svg?style=flat&logo=typescript)](https://www.typescriptlang.org/) [![Framework: Grammy](https://img.shields.io/badge/powered%20by-grammy-009dca.svg?style=flat&logo=telegram)](https://grammy.dev/) [![ECMAScript: 2019](https://img.shields.io/badge/ES-9-F7DF1E.svg?style=flat&logo=javascript)](https://github.com/tc39/ecma262) [![Discord Server](https://discordapp.com/api/guilds/383373985666301975/embed.png)](https://discord.ptkdev.io)
 
 <!-- all-shields/header-badges:END -->
 
-About Me Info Bot: Share your social media and links on Telegram
+About Me Info Bot: Share your social profiles and links on Telegram
 
 ## 🎁 Support: Donate
 
@@ -49,6 +49,8 @@ About Me Info Bot: Share your social media and links on Telegram
 -   [✔️] Share your tiktok profile on Telegram
 -   [✔️] Share your steam profile on Telegram
 -   [✔️] Share your linkedin profile on Telegram
+-   [✔️] Share your youtube profile on Telegram
+-   [✔️] Share your discord profile on Telegram
 -   [✔️] Share your onlyfans profile on Telegram
 -   [✔️] Share your website on Telegram
 
@@ -60,7 +62,7 @@ About Me Info Bot: Share your social media and links on Telegram
 
 1. Add [@AboutMeInfoBot](https://t.me/AboutMeInfoBot) to your Telegram group
 2. Run `/start` or `/start@AboutMeInfoBot`
-3. Ask social of user, run `/about @NICKNAME`
+3. Ask social buttons of user with `/about @NICKNAME`
 
 ## 🎮 How to set your links
 

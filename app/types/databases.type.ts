@@ -190,6 +190,8 @@ export interface AboutInterface {
 	instagram: string;
 	github: string;
 	linkedin: string;
+	youtube: string;
+	discord: string;
 	facebook: string;
 	twitter: string;
 	tiktok: string;

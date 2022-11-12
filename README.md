@@ -8,7 +8,7 @@
 
 <!-- all-shields/header-badges:END -->
 
-About Me Info Bot: Share your social media and links on Telegram
+About Me Info Bot: Share your social profiles and links on Telegram
 
 ## 🎁 Support: Donate
 
@@ -49,6 +49,8 @@ About Me Info Bot: Share your social media and links on Telegram
 -   [✔️] Share your tiktok profile on Telegram
 -   [✔️] Share your steam profile on Telegram
 -   [✔️] Share your linkedin profile on Telegram
+-   [✔️] Share your youtube profile on Telegram
+-   [✔️] Share your discord profile on Telegram
 -   [✔️] Share your onlyfans profile on Telegram
 -   [✔️] Share your website on Telegram
 
@@ -60,7 +62,7 @@ About Me Info Bot: Share your social media and links on Telegram
 
 1. Add [@AboutMeInfoBot](https://t.me/AboutMeInfoBot) to your Telegram group
 2. Run `/start` or `/start@AboutMeInfoBot`
-3. Ask social of user, run `/about @NICKNAME`
+3. Ask social buttons of user with `/about @NICKNAME`
 
 ## 🎮 How to set your links
 

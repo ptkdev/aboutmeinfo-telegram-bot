@@ -32,21 +32,21 @@ const hears = async (): Promise<void> => {
 			const about = await db.about.get({
 				id: telegram.api.message.getUserID(ctx),
 			});
-			if (
-				about.step !== "done" &&
-				about.step !== "privacy" &&
-				(telegram.api.message.getText(ctx).trim().toLowerCase().startsWith("https://") ||
-					telegram.api.message.getText(ctx).trim().toLowerCase() ===
-						translate(lang.language, "set_command_skip"))
-			) {
+			if (about.step !== "done" && about.step !== "privacy") {
+				let text = telegram.api.message.getText(ctx).trim().toLowerCase();
+
 				switch (about.step) {
 					case "facebook":
 					case "set_facebook":
-						about.facebook =
-							telegram.api.message.getText(ctx).trim().toLowerCase() ===
-							translate(lang.language, "set_command_skip")
-								? ""
-								: telegram.api.message.getText(ctx).trim().toLowerCase();
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://facebook.com/${text}`;
+						}
+
+						about.facebook = text === translate(lang.language, "set_command_skip") ? "" : text;
 
 						if (about.step.toString() === "set_facebook") {
 							about.step = "done";
@@ -75,11 +75,16 @@ const hears = async (): Promise<void> => {
 
 					case "instagram":
 					case "set_instagram":
-						about.instagram =
-							telegram.api.message.getText(ctx).trim().toLowerCase() ===
-							translate(lang.language, "set_command_skip")
-								? ""
-								: telegram.api.message.getText(ctx).trim().toLowerCase();
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://instagram.com/${text}`;
+						}
+
+						about.instagram = text === translate(lang.language, "set_command_skip") ? "" : text;
+
 						if (about.step.toString() === "set_instagram") {
 							about.step = "done";
 
@@ -107,11 +112,16 @@ const hears = async (): Promise<void> => {
 
 					case "twitter":
 					case "set_twitter":
-						about.twitter =
-							telegram.api.message.getText(ctx).trim().toLowerCase() ===
-							translate(lang.language, "set_command_skip")
-								? ""
-								: telegram.api.message.getText(ctx).trim().toLowerCase();
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://twitter.com/${text}`;
+						}
+
+						about.twitter = text === translate(lang.language, "set_command_skip") ? "" : text;
+
 						if (about.step.toString() === "set_twitter") {
 							about.step = "done";
 
@@ -139,11 +149,16 @@ const hears = async (): Promise<void> => {
 
 					case "linkedin":
 					case "set_linkedin":
-						about.linkedin =
-							telegram.api.message.getText(ctx).trim().toLowerCase() ===
-							translate(lang.language, "set_command_skip")
-								? ""
-								: telegram.api.message.getText(ctx).trim().toLowerCase();
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://www.linkedin.com/in/${text}`;
+						}
+
+						about.linkedin = text === translate(lang.language, "set_command_skip") ? "" : text;
+
 						if (about.step.toString() === "set_linkedin") {
 							about.step = "done";
 
@@ -171,11 +186,16 @@ const hears = async (): Promise<void> => {
 
 					case "tiktok":
 					case "set_tiktok":
-						about.tiktok =
-							telegram.api.message.getText(ctx).trim().toLowerCase() ===
-							translate(lang.language, "set_command_skip")
-								? ""
-								: telegram.api.message.getText(ctx).trim().toLowerCase();
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://www.tiktok.com/@${text}`;
+						}
+
+						about.tiktok = text === translate(lang.language, "set_command_skip") ? "" : text;
+
 						if (about.step.toString() === "set_tiktok") {
 							about.step = "done";
 
@@ -203,11 +223,16 @@ const hears = async (): Promise<void> => {
 
 					case "github":
 					case "set_github":
-						about.github =
-							telegram.api.message.getText(ctx).trim().toLowerCase() ===
-							translate(lang.language, "set_command_skip")
-								? ""
-								: telegram.api.message.getText(ctx).trim().toLowerCase();
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://github.com/${text}`;
+						}
+
+						about.github = text === translate(lang.language, "set_command_skip") ? "" : text;
+
 						if (about.step.toString() === "set_github") {
 							about.step = "done";
 
@@ -235,11 +260,16 @@ const hears = async (): Promise<void> => {
 
 					case "steam":
 					case "set_steam":
-						about.steam =
-							telegram.api.message.getText(ctx).trim().toLowerCase() ===
-							translate(lang.language, "set_command_skip")
-								? ""
-								: telegram.api.message.getText(ctx).trim().toLowerCase();
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://steamcommunity.com/id/${text}`;
+						}
+
+						about.steam = text === translate(lang.language, "set_command_skip") ? "" : text;
+
 						if (about.step.toString() === "set_steam") {
 							about.step = "done";
 
@@ -267,11 +297,16 @@ const hears = async (): Promise<void> => {
 
 					case "onlyfans":
 					case "set_onlyfans":
-						about.onlyfans =
-							telegram.api.message.getText(ctx).trim().toLowerCase() ===
-							translate(lang.language, "set_command_skip")
-								? ""
-								: telegram.api.message.getText(ctx).trim().toLowerCase();
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://onlyfans.com/${text}`;
+						}
+
+						about.onlyfans = text === translate(lang.language, "set_command_skip") ? "" : text;
+
 						if (about.step.toString() === "set_onlyfans") {
 							about.step = "done";
 
@@ -299,11 +334,16 @@ const hears = async (): Promise<void> => {
 
 					case "amazon":
 					case "set_amazon":
-						about.amazon =
-							telegram.api.message.getText(ctx).trim().toLowerCase() ===
-							translate(lang.language, "set_command_skip")
-								? ""
-								: telegram.api.message.getText(ctx).trim().toLowerCase();
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://www.amazon.it/hz/wishlist/ls/${text}`;
+						}
+
+						about.amazon = text === translate(lang.language, "set_command_skip") ? "" : text;
+
 						if (about.step.toString() === "set_amazon") {
 							about.step = "done";
 
@@ -331,11 +371,21 @@ const hears = async (): Promise<void> => {
 
 					case "website":
 					case "set_website":
-						about.website =
-							telegram.api.message.getText(ctx).trim().toLowerCase() ===
-							translate(lang.language, "set_command_skip")
-								? ""
-								: telegram.api.message.getText(ctx).trim().toLowerCase();
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = "";
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "hears_command_bad_url"),
+							);
+						}
+
+						about.website = text === translate(lang.language, "set_command_skip") ? "" : text;
+
 						if (about.step.toString() === "set_website") {
 							about.step = "done";
 
@@ -381,12 +431,6 @@ const hears = async (): Promise<void> => {
 					translate(lang.language, "set_command_privacy_done", {
 						username: telegram.api.message.getUsername(ctx),
 					}),
-				);
-			} else if (about.step !== "done") {
-				await telegram.api.message.send(
-					ctx,
-					telegram.api.message.getChatID(ctx),
-					translate(lang.language, "hears_command_bad_url"),
 				);
 			}
 		}

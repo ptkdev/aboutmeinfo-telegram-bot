@@ -27,12 +27,18 @@ const version = async (): Promise<void> => {
 				translate(lang.language, "ral_command_error"),
 			);
 		} else {
+			let ral = Math.floor(Math.random() * (181 - 18) + 18);
+
+			if (Math.floor(Math.random() * 100) === 50 && Math.floor(Math.random() * 100) === 50) {
+				ral = 250;
+			}
+
 			await telegram.api.message.send(
 				ctx,
 				telegram.api.message.getChatID(ctx),
 				translate(lang.language, "ral_command", {
 					username: telegram.api.message.getText(ctx).replace("/ral ", "").replace(/_/g, "\\_").trim(),
-					ral: Math.floor(Math.random() * (120 - 18) + 18),
+					ral: ral,
 				}),
 				{ parse_mode: "MarkdownV2" },
 			);

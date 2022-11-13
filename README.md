@@ -50,6 +50,7 @@ About Me Info Bot: Share your social profiles and links on Telegram
 -   [✔️] Share your steam profile on Telegram
 -   [✔️] Share your linkedin profile on Telegram
 -   [✔️] Share your youtube profile on Telegram
+-   [✔️] Share your spotify playlist on Telegram
 -   [✔️] Share your discord profile on Telegram
 -   [✔️] Share your onlyfans profile on Telegram
 -   [✔️] Share your website on Telegram

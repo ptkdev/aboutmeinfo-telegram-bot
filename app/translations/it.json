@@ -22,6 +22,7 @@
 	"about_command_button_instagram": "📷 Instagram",
 	"about_command_button_linkedin": "💼 LinkedIn",
 	"about_command_button_youtube": "📺 Youtube",
+	"about_command_button_spotify": "🎧 Playlist",
 	"about_command_button_discord": "🤖 Discord",
 	"about_command_button_twitter": "🐣 Twitter",
 	"about_command_button_tiktok": "👯‍♀️ TikTok",
@@ -36,6 +37,7 @@
 	"set_command_twitter": "Scrivi il link o nickname del tuo profilo 🐣 Twitter, scrivi \"<b>ignora</b>\" se non ne hai uno",
 	"set_command_linkedin": "Scrivi il link o nickname del tuo profilo 💼 LinkedIn, scrivi \"<b>ignora</b>\" se non ne hai uno",
 	"set_command_youtube": "Scrivi il link o nickname del tuo canale 📺 Youtube, scrivi \"<b>ignora</b>\" se non ne hai uno",
+	"set_command_spotify": "Scrivi il link o id della tua playlist 🎧 Spotify, scrivi \"<b>ignora</b>\" se non ne hai uno",
 	"set_command_discord": "Scrivi il link o nickname del tuo server 🤖 Discord, scrivi \"<b>ignora</b>\" se non ne hai uno",
 	"set_command_tiktok": "Scrivi il link o nickname del tuo profilo 👯‍♀️ TikTok, scrivi \"<b>ignora</b>\" se non ne hai uno, esempio",
 	"set_command_github": "Scrivi il link o nickname del tuo 👨‍💻 GitHub, scrivi \"<b>ignora</b>\" se non ne hai uno, esempio",
@@ -54,7 +56,7 @@
 	"hears_command_bad_url": "🚨 L'url inserito non è valido, deve iniziare con <b>https://</b>\n\nSistemalo usando /set o fai /start di nuovo",
 	"about_command_user_not_found": "😿 L'utente @{{username}} non ha impostato i suoi profili, chiedigli di farlo scrivendo in privato al bot: @{{bot_nickname}}",
 	"start_command_nickname_empty": "🚷 Non hai impostato un nickname nel tuo account di Telegram, entra nelle impostazioni dell'app e inseriscine uno. Poi fai nuovamente /start",
-	"start_command_intro_group": "Questo bot permette di condividere i tuoi profili social e link con gli utenti di telegram. Usa il comando /about @nickname per vedere i profili e link di un utente, ad esempio:\n\n/about @ptkdev\n\nScrivi in privato a @{{bot_nickname}} per impostare i tuoi profili.",
+	"start_command_intro_group": "Questo bot permette di condividere i tuoi profili social e link con gli utenti di telegram.\n\nUsa il comando <code>/about @nickname</code> per vedere i profili e link di un utente, ad esempio:\n\n<code>/about @ptkdev</code>\n\nScrivi in privato a @{{bot_nickname}} per impostare i tuoi profili.",
 	"ral_command": "||La RAL di {{username}}, {{ral}}k\\!||",
 	"ral_command_error": "Il formato corretto è:\n\n<code>/ral @nickname</code>\n\n<code>esempio: /ral @ptkdev</code>. Riprova!"
 }

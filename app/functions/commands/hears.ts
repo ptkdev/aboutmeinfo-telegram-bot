@@ -208,6 +208,43 @@ const hears = async (): Promise<void> => {
 								}),
 							);
 						} else {
+							about.step = "spotify";
+
+							await db.about.update({ id: about.id }, about);
+
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_spotify"),
+							);
+						}
+
+						break;
+
+					case "spotify":
+					case "set_spotify":
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://open.spotify.com/playlist/${text}`;
+						}
+
+						about.spotify = text === translate(lang.language, "set_command_skip") ? "" : text;
+
+						if (about.step.toString() === "set_spotify") {
+							about.step = "done";
+
+							await db.about.update({ id: about.id }, about);
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_done", {
+									username: telegram.api.message.getUsername(ctx),
+								}),
+							);
+						} else {
 							about.step = "discord";
 
 							await db.about.update({ id: about.id }, about);

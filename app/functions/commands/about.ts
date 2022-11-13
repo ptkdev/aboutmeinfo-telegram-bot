@@ -54,6 +54,7 @@ const about = async (): Promise<void> => {
 					account.twitter === "" &&
 					account.linkedin === "" &&
 					account.youtube === "" &&
+					account.spotify === "" &&
 					account.discord === "" &&
 					account.tiktok === "" &&
 					account.steam === "" &&
@@ -114,6 +115,9 @@ const about = async (): Promise<void> => {
 
 					account.youtube !== "" &&
 						buttons.url(translate(lang.language, "about_command_button_youtube"), account.youtube).row();
+
+					account.spotify !== "" &&
+						buttons.url(translate(lang.language, "about_command_button_spotify"), account.spotify).row();
 
 					account.discord !== "" &&
 						buttons.url(translate(lang.language, "about_command_button_discord"), account.discord).row();

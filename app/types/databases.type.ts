@@ -191,6 +191,7 @@ export interface AboutInterface {
 	github: string;
 	linkedin: string;
 	youtube: string;
+	spotify: string;
 	discord: string;
 	facebook: string;
 	twitter: string;

@@ -22,6 +22,7 @@
 	"about_command_button_instagram": "📷 Instagram",
 	"about_command_button_linkedin": "💼 LinkedIn",
 	"about_command_button_youtube": "📺 Youtube",
+	"about_command_button_spotify": "🎧 Playlist",
 	"about_command_button_discord": "🤖 Discord",
 	"about_command_button_twitter": "🐣 Twitter",
 	"about_command_button_tiktok": "👯‍♀️ TikTok",
@@ -36,6 +37,7 @@
 	"set_command_twitter": "Type the link or nickname of your 🐣 Twitter profile, type in \"<b>skip</b>\" if you don't have one",
 	"set_command_linkedin": "Type the link or nickname of your 💼 LinkedIn profile, type in \"<b>skip</b>\" if you don't have one",
 	"set_command_youtube": "Type the link or nickname of your 📺 Youtube channel, type in \"<b>skip</b>\" if you don't have one",
+	"set_command_spotify": "Type the link or id of your 🎧 Spotify playlist, type in \"<b>skip</b>\" if you don't have one",
 	"set_command_discord": "Type the link or id of your 🤖 Discord server, type in \"<b>skip</b>\" if you don't have one",
 	"set_command_tiktok": "Type the link or nickname of your 👯‍♀️ TikTok profile, type in \"<b>skip</b>\" if you don't have one",
 	"set_command_github": "Type the link or nickname of your 👨‍💻 GitHub profile, type in \"<b>skip</b>\" if you don't have one",
@@ -54,7 +56,7 @@
 	"hears_command_bad_url": "🚨 The inserted URL is invalid, it must start with <b>https://</b>\n\nFix it with /set or try again /start",
 	"about_command_user_not_found": "😿 The user @{{username}} did not set his profiles, ask him to do it by typing in private to the bot: @{{bot_nickname}}",
 	"start_command_nickname_empty": "🚷 You have not set a nickname in your telegram account: enter the settings of the app and insert one, then you do again /start",
-	"start_command_intro_group": "This bot allows you to share your social profiles and links with Telegram users. Use the command /about @nickname to see a user's profiles and links, for example:\n\n/about @ptkdev\n\nType in private to @{{bot_nickname}} to set your links and social media.",
+	"start_command_intro_group": "This bot allows you to share your social profiles and links with Telegram users.\n\nUse the command <code>/about @nickname</code> to see a user's profiles and links, for example:\n\n<code>/about @ptkdev</code>\n\nType in private to @{{bot_nickname}} to set your links and social media.",
 	"ral_command": "||The RAL of {{username}}, {{ral}}k\\!||",
 	"ral_command_error": "The correct format is:\n\n<code>/ral @nickname</code>\n\n<code>example: /ral @ptkdev</code>. Try again!"
 }

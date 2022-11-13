@@ -20,6 +20,7 @@ const schema = new Schema<AboutInterface>({
 	github: { type: String, default: "" },
 	linkedin: { type: String, default: "" },
 	youtube: { type: String, default: "" },
+	spotify: { type: String, default: "" },
 	discord: { type: String, default: "" },
 	facebook: { type: String, default: "" },
 	twitter: { type: String, default: "" },

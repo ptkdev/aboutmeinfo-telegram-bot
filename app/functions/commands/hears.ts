@@ -223,6 +223,7 @@ const hears = async (): Promise<void> => {
 
 					case "spotify":
 					case "set_spotify":
+						text = telegram.api.message.getText(ctx).trim(); // without lower case because spotify have id CASE SENSITIVE
 						if (
 							!text.startsWith("https://") &&
 							!text.startsWith("http://") &&
@@ -260,6 +261,8 @@ const hears = async (): Promise<void> => {
 
 					case "discord":
 					case "set_discord":
+						text = telegram.api.message.getText(ctx).trim(); // without lower case because discord have id CASE SENSITIVE
+
 						if (
 							!text.startsWith("https://") &&
 							!text.startsWith("http://") &&

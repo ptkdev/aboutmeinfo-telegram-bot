@@ -225,9 +225,9 @@ const hears = async (): Promise<void> => {
 					case "set_spotify":
 						text = telegram.api.message.getText(ctx).trim(); // without lower case because spotify have id CASE SENSITIVE
 						if (
-							!text.startsWith("https://") &&
-							!text.startsWith("http://") &&
-							translate(lang.language, "set_command_skip") !== text
+							!text.toLowerCase().startsWith("https://") &&
+							!text.toLowerCase().startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text.toLowerCase()
 						) {
 							text = `https://open.spotify.com/playlist/${text}`;
 						}
@@ -264,9 +264,9 @@ const hears = async (): Promise<void> => {
 						text = telegram.api.message.getText(ctx).trim(); // without lower case because discord have id CASE SENSITIVE
 
 						if (
-							!text.startsWith("https://") &&
-							!text.startsWith("http://") &&
-							translate(lang.language, "set_command_skip") !== text
+							!text.toLowerCase().startsWith("https://") &&
+							!text.toLowerCase().startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text.toLowerCase()
 						) {
 							text = `https://discord.com/invite/${text}`;
 						}

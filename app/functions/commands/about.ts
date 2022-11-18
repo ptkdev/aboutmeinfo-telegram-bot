@@ -94,44 +94,57 @@ const about = async (): Promise<void> => {
 					const buttons = new InlineKeyboard();
 
 					account.facebook !== "" &&
+						(account.facebook.startsWith("https://") || account.facebook.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_facebook"), account.facebook).row();
 
 					account.instagram !== "" &&
+						(account.instagram.startsWith("https://") || account.instagram.startsWith("http://")) &&
 						buttons
 							.url(translate(lang.language, "about_command_button_instagram"), account.instagram)
 							.row();
 
 					account.twitter !== "" &&
+						(account.twitter.startsWith("https://") || account.twitter.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_twitter"), account.twitter).row();
 
 					account.github !== "" &&
+						(account.github.startsWith("https://") || account.github.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_github"), account.github).row();
 
 					account.tiktok !== "" &&
+						(account.tiktok.startsWith("https://") || account.tiktok.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_tiktok"), account.tiktok).row();
 
 					account.linkedin !== "" &&
+						(account.linkedin.startsWith("https://") || account.linkedin.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_linkedin"), account.linkedin).row();
 
 					account.youtube !== "" &&
+						(account.youtube.startsWith("https://") || account.youtube.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_youtube"), account.youtube).row();
 
 					account.spotify !== "" &&
+						(account.spotify.startsWith("https://") || account.spotify.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_spotify"), account.spotify).row();
 
 					account.discord !== "" &&
+						(account.discord.startsWith("https://") || account.discord.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_discord"), account.discord).row();
 
 					account.steam !== "" &&
+						(account.steam.startsWith("https://") || account.steam.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_steam"), account.steam).row();
 
 					account.onlyfans !== "" &&
+						(account.onlyfans.startsWith("https://") || account.onlyfans.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_onlyfans"), account.onlyfans).row();
 
 					account.amazon !== "" &&
+						(account.amazon.startsWith("https://") || account.amazon.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_amazon"), account.amazon).row();
 
 					account.website !== "" &&
+						(account.website.startsWith("https://") || account.website.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_website"), account.website).row();
 
 					const options: any = {};

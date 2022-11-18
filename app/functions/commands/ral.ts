@@ -5,14 +5,14 @@ import translate from "@translations/translate";
 import db from "@routes/api/database";
 
 /**
- * command: /version
+ * command: /ral
  * =====================
- * Get the version of the bot
+ * Meme command for https://t.me/ptkdev_support_italian
  *
  */
-const version = async (): Promise<void> => {
+const ral = async (): Promise<void> => {
 	bot.command("ral", async (ctx) => {
-		logger.info("command: /ral", "version.ts:ral()");
+		logger.info("command: /ral", "ral.ts:ral()");
 		const lang = await db.settings.get({
 			group_id: telegram.api.message.getChatID(ctx),
 		});
@@ -46,5 +46,5 @@ const version = async (): Promise<void> => {
 	});
 };
 
-export { version };
-export default version;
+export { ral };
+export default ral;

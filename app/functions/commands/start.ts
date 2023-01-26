@@ -54,6 +54,7 @@ const start = async (): Promise<void> => {
 				});
 
 				if (about.id.toString() !== "0") {
+					about.username = telegram.api.message.getUsername(ctx);
 					about.step = "facebook";
 					await db.about.update({ id: about.id }, about);
 				} else {

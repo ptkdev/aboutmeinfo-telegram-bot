@@ -37,6 +37,12 @@ const set = async (): Promise<void> => {
 				}),
 			);
 		} else {
+			const about = await db.about.get({
+				id: telegram.api.message.getUserID(ctx),
+			});
+			about.username = telegram.api.message.getUsername(ctx);
+			await db.about.update({ id: about.id }, about);
+
 			const buttons = new InlineKeyboard();
 
 			buttons.text(translate(lang.language, "about_command_button_facebook"), "set_facebook");

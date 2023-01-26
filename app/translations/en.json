@@ -58,5 +58,5 @@
 	"start_command_nickname_empty": "🚷 You have not set a nickname in your telegram account: enter the settings of the app and insert one, then you do again /start",
 	"start_command_intro_group": "This bot allows you to share your social profiles and links with Telegram users.\n\nUse the command <code>/about @nickname</code> to see a user's profiles and links, for example:\n\n<code>/about @ptkdev</code>\n\nType in private to @{{bot_nickname}} to set your links and social media.",
 	"ral_command": "||The RAL of {{username}}, {{ral}}k\\!||",
-	"ral_command_error": "The correct format is:\n\n<code>/ral @nickname</code>\n\n<code>example: /ral @ptkdev</code>. Try again!"
+	"ral_command_error": "The correct format is:\n\n<code>/ral @nickname</code>\n\nexample: <code>/ral @ptkdev</code>. Try again!"
 }

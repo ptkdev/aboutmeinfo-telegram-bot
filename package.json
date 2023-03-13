@@ -2,7 +2,7 @@
 	"name": "@ptkdev/aboutmeinfo-telegram-bot",
 	"displayName": "About Me Info",
 	"description": "Share your social profiles and links on Telegram",
-	"version": "0.6.9-nightly.45",
+	"version": "0.6.9-nightly.46",
 	"main": "dist/core/bot.js",
 	"publishConfig": {
 		"access": "public"
@@ -65,12 +65,12 @@
 	},
 	"devDependencies": {
 		"@ptkdev/all-shields-cli": "^2.0.2",
-		"@types/jest": "^29.4.0",
-		"@types/node": "^18.15.0",
+		"@types/jest": "^29.4.1",
+		"@types/node": "^18.15.2",
 		"@types/shelljs": "^0.8.11",
 		"@types/yargs": "^16.0.5",
-		"@typescript-eslint/eslint-plugin": "^5.54.1",
-		"@typescript-eslint/parser": "^5.54.1",
+		"@typescript-eslint/eslint-plugin": "^5.55.0",
+		"@typescript-eslint/parser": "^5.55.0",
 		"all-contributors-cli": "^6.24.0",
 		"eslint": "^7.32.0",
 		"eslint-plugin-jest": "^27.2.1",

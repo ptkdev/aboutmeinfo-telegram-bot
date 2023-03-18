@@ -41,6 +41,18 @@
 			"contributions": [
 				"translation"
 			]
+		},
+		{
+			"login": "airscripts",
+			"name": "Airscript",
+			"avatar_url": "https://avatars.githubusercontent.com/u/43211620?v=4",
+			"profile": "https://airscript.it",
+			"contributions": [
+				"code",
+				"translation",
+				"bug"
+			]
+		}
 	],
 	"contributorsPerLine": 6,
 	"commitConvention": "none"

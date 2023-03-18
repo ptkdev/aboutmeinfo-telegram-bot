@@ -4,7 +4,7 @@
 
 <!-- all-shields/header-badges:START -->
 
-[![v0.6.9-nightly.50](https://img.shields.io/badge/version-v0.6.9--nightly.50-lightgray.svg?style=flat&logo=)](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/CHANGELOG.md) [![](https://img.shields.io/npm/v/@ptkdev/aboutmeinfo-telegram-bot?color=CC3534&logo=npm)](https://www.npmjs.com/package/@ptkdev/aboutmeinfo-telegram-bot) [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat&logo=license)](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/LICENSE.md) [![Language: TypeScript](https://img.shields.io/badge/language-typescript-blue.svg?style=flat&logo=typescript)](https://www.typescriptlang.org/) [![Framework: Grammy](https://img.shields.io/badge/powered%20by-grammy-009dca.svg?style=flat&logo=telegram)](https://grammy.dev/) [![ECMAScript: 2019](https://img.shields.io/badge/ES-9-F7DF1E.svg?style=flat&logo=javascript)](https://github.com/tc39/ecma262) [![Discord Server](https://discordapp.com/api/guilds/383373985666301975/embed.png)](https://discord.ptkdev.io)
+[![v0.6.9-nightly.51](https://img.shields.io/badge/version-v0.6.9--nightly.51-lightgray.svg?style=flat&logo=)](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/CHANGELOG.md) [![](https://img.shields.io/npm/v/@ptkdev/aboutmeinfo-telegram-bot?color=CC3534&logo=npm)](https://www.npmjs.com/package/@ptkdev/aboutmeinfo-telegram-bot) [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat&logo=license)](https://github.com/ptkdev/aboutmeinfo-telegram-bot/blob/main/LICENSE.md) [![Language: TypeScript](https://img.shields.io/badge/language-typescript-blue.svg?style=flat&logo=typescript)](https://www.typescriptlang.org/) [![Framework: Grammy](https://img.shields.io/badge/powered%20by-grammy-009dca.svg?style=flat&logo=telegram)](https://grammy.dev/) [![ECMAScript: 2019](https://img.shields.io/badge/ES-9-F7DF1E.svg?style=flat&logo=javascript)](https://github.com/tc39/ecma262) [![Discord Server](https://discordapp.com/api/guilds/383373985666301975/embed.png)](https://discord.ptkdev.io)
 
 <!-- all-shields/header-badges:END -->
 
@@ -111,6 +111,17 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="16.66%"><a href="https://ptk.dev"><img src="https://avatars1.githubusercontent.com/u/442844?v=4?s=100" width="100px;" alt="Patryk Rzucidło"/><br /><sub><b>Patryk Rzucidło</b></sub></a><br /><a href="https://github.com/ptkdev/ptkdev/aboutmeinfo-telegram-bot/commits?author=ptkdev" title="Code">💻</a> <a href="#translation-ptkdev" title="Translation">🌍</a> <a href="https://github.com/ptkdev/ptkdev/aboutmeinfo-telegram-bot/commits?author=ptkdev" title="Documentation">📖</a> <a href="https://github.com/ptkdev/ptkdev/aboutmeinfo-telegram-bot/issues?q=author%3Aptkdev" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="16.66%"><img src="https://avatars1.githubusercontent.com/u/50172746?v=4?s=100" width="100px;" alt="Alì Shadman"/><br /><sub><b>Alì Shadman</b></sub><br /><a href="https://github.com/ptkdev/ptkdev/aboutmeinfo-telegram-bot/commits?author=AliShadman95" title="Code">💻</a> <a href="#translation-AliShadman95" title="Translation">🌍</a> <a href="https://github.com/ptkdev/ptkdev/aboutmeinfo-telegram-bot/commits?author=AliShadman95" title="Documentation">📖</a> <a href="https://github.com/ptkdev/ptkdev/aboutmeinfo-telegram-bot/issues?q=author%3AAliShadman95" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="16.66%"><a href="https://adct.it"><img src="https://avatars.githubusercontent.com/u/562969?v=4?s=100" width="100px;" alt="Adrian Castro"/><br /><sub><b>Adrian Castro</b></sub></a><br /><a href="#translation-ial32" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="16.66%"><a href="https://airscript.it"><img src="https://avatars.githubusercontent.com/u/43211620?v=4?s=100" width="100px;" alt="Airscript"/><br /><sub><b>Airscript</b></sub></a><br /><a href="https://github.com/ptkdev/ptkdev/aboutmeinfo-telegram-bot/commits?author=airscripts" title="Code">💻</a> <a href="#translation-airscripts" title="Translation">🌍</a> <a href="https://github.com/ptkdev/ptkdev/aboutmeinfo-telegram-bot/issues?q=author%3Aairscripts" title="Bug reports">🐛</a></td>
+    </tr>
+  </tbody>
+</table>
+
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 

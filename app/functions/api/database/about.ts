@@ -25,6 +25,7 @@ const schema = new Schema<AboutInterface>({
 	facebook: { type: String, default: "" },
 	twitter: { type: String, default: "" },
 	tiktok: { type: String, default: "" },
+	twitch: { type: String, default: "" },
 	steam: { type: String, default: "" },
 	onlyfans: { type: String, default: "" },
 	amazon: { type: String, default: "" },

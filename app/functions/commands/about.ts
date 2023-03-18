@@ -57,6 +57,7 @@ const about = async (): Promise<void> => {
 					account.spotify === "" &&
 					account.discord === "" &&
 					account.tiktok === "" &&
+					account.twitch === "" &&
 					account.steam === "" &&
 					account.onlyfans === "" &&
 					account.amazon === "" &&
@@ -114,6 +115,10 @@ const about = async (): Promise<void> => {
 					account.tiktok !== "" &&
 						(account.tiktok.startsWith("https://") || account.tiktok.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_tiktok"), account.tiktok).row();
+
+					account.twitch !== "" &&
+						(account.twitch.startsWith("https://") || account.twitch.startsWith("http://")) &&
+						buttons.url(translate(lang.language, "about_command_button_twitch"), account.twitch).row();
 
 					account.linkedin !== "" &&
 						(account.linkedin.startsWith("https://") || account.linkedin.startsWith("http://")) &&

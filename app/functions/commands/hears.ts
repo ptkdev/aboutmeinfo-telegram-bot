@@ -512,6 +512,42 @@ const hears = async (): Promise<void> => {
 								}),
 							);
 						} else {
+							about.step = "twitch";
+
+							await db.about.update({ id: about.id }, about);
+
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_twitch"),
+							);
+						}
+						break;
+
+					case "twitch":
+					case "set_twitch":
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://twitch.tv/${text}`;
+						}
+
+						about.twitch = text === translate(lang.language, "set_command_skip") ? "" : text;
+
+						if (about.step.toString() === "set_twitch") {
+							about.step = "done";
+
+							await db.about.update({ id: about.id }, about);
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_done", {
+									username: telegram.api.message.getUsername(ctx),
+								}),
+							);
+						} else {
 							about.step = "done";
 
 							await db.about.update({ id: about.id }, about);

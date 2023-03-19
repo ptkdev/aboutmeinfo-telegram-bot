@@ -45,31 +45,37 @@ const set = async (): Promise<void> => {
 
 			const buttons = new InlineKeyboard();
 
+			buttons.text(translate(lang.language, "about_command_button_twitter"), "set_twitter");
 			buttons.text(translate(lang.language, "about_command_button_facebook"), "set_facebook");
 			buttons.text(translate(lang.language, "about_command_button_instagram"), "set_instagram");
-			buttons.text(translate(lang.language, "about_command_button_twitter"), "set_twitter");
 
 			buttons.row();
 
 			buttons.text(translate(lang.language, "about_command_button_tiktok"), "set_tiktok");
-			buttons.text(translate(lang.language, "about_command_button_steam"), "set_steam");
-			buttons.text(translate(lang.language, "about_command_button_twitch"), "set_twitch");
-
-			buttons.row();
-
-			buttons.text(translate(lang.language, "about_command_button_youtube"), "set_youtube");
-			buttons.text(translate(lang.language, "about_command_button_spotify"), "set_spotify");
-			buttons.text(translate(lang.language, "about_command_button_discord"), "set_discord");
-
-			buttons.row();
-
+			buttons.text(translate(lang.language, "about_command_button_linkedin"), "set_linkedin");
 			buttons.text(translate(lang.language, "about_command_button_onlyfans"), "set_onlyfans");
-			buttons.text(translate(lang.language, "about_command_button_amazon"), "set_amazon");
 
 			buttons.row();
 
 			buttons.text(translate(lang.language, "about_command_button_github"), "set_github");
-			buttons.text(translate(lang.language, "about_command_button_linkedin"), "set_linkedin");
+			buttons.text(translate(lang.language, "about_command_button_gitlab"), "set_gitlab");
+			buttons.text(translate(lang.language, "about_command_button_mastodon"), "set_mastodon");
+
+			buttons.row();
+
+			buttons.text(translate(lang.language, "about_command_button_psn"), "set_psn");
+			buttons.text(translate(lang.language, "about_command_button_steam"), "set_steam");
+			buttons.text(translate(lang.language, "about_command_button_discord"), "set_discord");
+
+			buttons.row();
+
+			buttons.text(translate(lang.language, "about_command_button_twitch"), "set_twitch");
+			buttons.text(translate(lang.language, "about_command_button_spotify"), "set_spotify");
+			buttons.text(translate(lang.language, "about_command_button_youtube"), "set_youtube");
+
+			buttons.row();
+
+			buttons.text(translate(lang.language, "about_command_button_amazon"), "set_amazon");
 			buttons.text(translate(lang.language, "about_command_button_website"), "set_website");
 
 			const options: any = {};

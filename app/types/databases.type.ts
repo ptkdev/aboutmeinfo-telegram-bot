@@ -196,7 +196,10 @@ export interface AboutInterface {
 	facebook: string;
 	twitter: string;
 	tiktok: string;
+	gitlab: string;
 	twitch: string;
+	mastodon: string;
+	psn: string;
 	steam: string;
 	onlyfans: string;
 	amazon: string;

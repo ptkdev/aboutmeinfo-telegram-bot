@@ -44,10 +44,13 @@ About Me Info Bot: Share your social profiles and links on Telegram
 -   [✔️] Share your social media and links on Telegram
 -   [✔️] Share your Instagram profile on Telegram
 -   [✔️] Share your GitHub profile on Telegram
+-   [✔️] Share your GitLab profile on Telegram
 -   [✔️] Share your Facebook profile on Telegram
 -   [✔️] Share your Twitter profile on Telegram
 -   [✔️] Share your TikTok profile on Telegram
 -   [✔️] Share your Twitch profile on Telegram
+-   [✔️] Share your Mastodon profile on Telegram
+-   [✔️] Share your PSN profile on Telegram
 -   [✔️] Share your Steam profile on Telegram
 -   [✔️] Share your LinkedIn profile on Telegram
 -   [✔️] Share your YouTube profile on Telegram

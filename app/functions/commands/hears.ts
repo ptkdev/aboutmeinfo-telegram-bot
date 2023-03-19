@@ -359,6 +359,43 @@ const hears = async (): Promise<void> => {
 								}),
 							);
 						} else {
+							about.step = "gitlab";
+
+							await db.about.update({ id: about.id }, about);
+
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_gitlab"),
+							);
+						}
+
+						break;
+
+					case "gitlab":
+					case "set_gitlab":
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://gitlab.com/${text}`;
+						}
+
+						about.gitlab = text === translate(lang.language, "set_command_skip") ? "" : text;
+
+						if (about.step.toString() === "set_gitlab") {
+							about.step = "done";
+
+							await db.about.update({ id: about.id }, about);
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_done", {
+									username: telegram.api.message.getUsername(ctx),
+								}),
+							);
+						} else {
 							about.step = "steam";
 
 							await db.about.update({ id: about.id }, about);
@@ -501,6 +538,83 @@ const hears = async (): Promise<void> => {
 						about.website = text === translate(lang.language, "set_command_skip") ? "" : text;
 
 						if (about.step.toString() === "set_website") {
+							about.step = "done";
+
+							await db.about.update({ id: about.id }, about);
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_done", {
+									username: telegram.api.message.getUsername(ctx),
+								}),
+							);
+						} else {
+							about.step = "mastodon";
+
+							await db.about.update({ id: about.id }, about);
+
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_mastodon"),
+							);
+						}
+						break;
+
+					case "mastodon":
+					case "set_mastodon":
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = "";
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "hears_command_bad_url"),
+							);
+						}
+
+						about.mastodon = text === translate(lang.language, "set_command_skip") ? "" : text;
+
+						if (about.step.toString() === "set_mastodon") {
+							about.step = "done";
+
+							await db.about.update({ id: about.id }, about);
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_done", {
+									username: telegram.api.message.getUsername(ctx),
+								}),
+							);
+						} else {
+							about.step = "psn";
+
+							await db.about.update({ id: about.id }, about);
+
+							await telegram.api.message.send(
+								ctx,
+								telegram.api.message.getChatID(ctx),
+								translate(lang.language, "set_command_psn"),
+							);
+						}
+						break;
+
+					case "psn":
+					case "set_psn":
+						if (
+							!text.startsWith("https://") &&
+							!text.startsWith("http://") &&
+							translate(lang.language, "set_command_skip") !== text
+						) {
+							text = `https://psnprofiles.com/${text}`;
+						}
+
+						about.psn = text === translate(lang.language, "set_command_skip") ? "" : text;
+
+						if (about.step.toString() === "set_psn") {
 							about.step = "done";
 
 							await db.about.update({ id: about.id }, about);

@@ -57,7 +57,10 @@ const about = async (): Promise<void> => {
 					account.spotify === "" &&
 					account.discord === "" &&
 					account.tiktok === "" &&
+					account.gitlab === "" &&
 					account.twitch === "" &&
+					account.mastodon === "" &&
+					account.psn === "" &&
 					account.steam === "" &&
 					account.onlyfans === "" &&
 					account.amazon === "" &&
@@ -119,6 +122,18 @@ const about = async (): Promise<void> => {
 					account.twitch !== "" &&
 						(account.twitch.startsWith("https://") || account.twitch.startsWith("http://")) &&
 						buttons.url(translate(lang.language, "about_command_button_twitch"), account.twitch).row();
+
+					account.mastodon !== "" &&
+						(account.mastodon.startsWith("https://") || account.mastodon.startsWith("http://")) &&
+						buttons.url(translate(lang.language, "about_command_button_mastodon"), account.mastodon).row();
+
+					account.psn !== "" &&
+						(account.psn.startsWith("https://") || account.psn.startsWith("http://")) &&
+						buttons.url(translate(lang.language, "about_command_button_psn"), account.psn).row();
+
+					account.gitlab !== "" &&
+						(account.gitlab.startsWith("https://") || account.gitlab.startsWith("http://")) &&
+						buttons.url(translate(lang.language, "about_command_button_gitlab"), account.gitlab).row();
 
 					account.linkedin !== "" &&
 						(account.linkedin.startsWith("https://") || account.linkedin.startsWith("http://")) &&

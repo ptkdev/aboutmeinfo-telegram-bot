@@ -2,7 +2,7 @@
 	"name": "@ptkdev/aboutmeinfo-telegram-bot",
 	"displayName": "About Me Info",
 	"description": "Share your social profiles and links on Telegram",
-	"version": "0.6.9-nightly.53",
+	"version": "0.6.9-nightly.54",
 	"main": "dist/core/bot.js",
 	"publishConfig": {
 		"access": "public"
@@ -80,7 +80,7 @@
 		"json": "^11.0.0",
 		"markserv": "^1.17.4",
 		"nodemon": "^2.0.21",
-		"prettier": "^2.8.5",
+		"prettier": "^2.8.6",
 		"shelljs": "^0.8.5",
 		"ts-jest": "^29.0.5",
 		"ts-node": "^10.9.1",

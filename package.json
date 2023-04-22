@@ -2,7 +2,7 @@
 	"name": "@ptkdev/aboutmeinfo-telegram-bot",
 	"displayName": "About Me Info",
 	"description": "Share your social profiles and links on Telegram",
-	"version": "0.6.9-nightly.85",
+	"version": "0.6.9-nightly.86",
 	"main": "dist/core/bot.js",
 	"publishConfig": {
 		"access": "public"
@@ -59,7 +59,7 @@
 	},
 	"dependencies": {
 		"@ptkdev/logger": "^1.8.0",
-		"grammy": "^1.15.3",
+		"grammy": "^1.16.0",
 		"mongoose": "^5.13.17",
 		"pm2": "^5.3.0"
 	},

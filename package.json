@@ -2,7 +2,7 @@
 	"name": "@ptkdev/aboutmeinfo-telegram-bot",
 	"displayName": "About Me Info",
 	"description": "Share your social profiles and links on Telegram",
-	"version": "0.6.9-nightly.159",
+	"version": "0.6.9-nightly.160",
 	"main": "dist/core/bot.js",
 	"publishConfig": {
 		"access": "public"
@@ -76,7 +76,7 @@
 		"eslint-plugin-jest": "^27.2.2",
 		"eslint-plugin-jsdoc": "^46.4.3",
 		"husky": "^8.0.3",
-		"jest": "^29.6.0",
+		"jest": "^29.6.1",
 		"json": "^11.0.0",
 		"markserv": "^1.17.4",
 		"nodemon": "^2.0.22",

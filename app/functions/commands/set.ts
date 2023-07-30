@@ -45,7 +45,7 @@ const set = async (): Promise<void> => {
 
 			const buttons = new InlineKeyboard();
 
-			buttons.text(translate(lang.language, "about_command_button_twitter"), "set_twitter");
+			buttons.text(translate(lang.language, "about_command_button_x"), "set_x");
 			buttons.text(translate(lang.language, "about_command_button_facebook"), "set_facebook");
 			buttons.text(translate(lang.language, "about_command_button_instagram"), "set_instagram");
 

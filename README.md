@@ -46,7 +46,7 @@ About Me Info Bot: Share your social profiles and links on Telegram
 -   [✔️] Share your GitHub profile on Telegram
 -   [✔️] Share your GitLab profile on Telegram
 -   [✔️] Share your Facebook profile on Telegram
--   [✔️] Share your Twitter profile on Telegram
+-   [✔️] Share your X profile on Telegram
 -   [✔️] Share your TikTok profile on Telegram
 -   [✔️] Share your Twitch profile on Telegram
 -   [✔️] Share your Mastodon profile on Telegram
@@ -164,4 +164,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 -   Images and logos have **CC BY-NC 4.0 License**
 -   Documentations and Translations have **CC BY 4.0 License**
 
-###### Copyleft (c) 2022 [Patryk Rzucidło](https://ptk.dev) ([@PTKDev](https://twitter.com/ptkdev)) <[support@ptkdev.io](mailto:support@ptkdev.io)>
+###### Copyleft (c) 2022 [Patryk Rzucidło](https://ptk.dev) ([@PTKDev](https://x.com/ptkdev)) <[support@ptkdev.io](mailto:support@ptkdev.io)>

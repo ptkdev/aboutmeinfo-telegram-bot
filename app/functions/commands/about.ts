@@ -51,7 +51,7 @@ const about = async (): Promise<void> => {
 				account.username === "" ||
 				(account.facebook === "" &&
 					account.instagram === "" &&
-					account.twitter === "" &&
+					account.x === "" &&
 					account.linkedin === "" &&
 					account.youtube === "" &&
 					account.spotify === "" &&
@@ -107,9 +107,9 @@ const about = async (): Promise<void> => {
 							.url(translate(lang.language, "about_command_button_instagram"), account.instagram)
 							.row();
 
-					account.twitter !== "" &&
-						(account.twitter.startsWith("https://") || account.twitter.startsWith("http://")) &&
-						buttons.url(translate(lang.language, "about_command_button_twitter"), account.twitter).row();
+					account.x !== "" &&
+						(account.x.startsWith("https://") || account.x.startsWith("http://")) &&
+						buttons.url(translate(lang.language, "about_command_button_x"), account.x).row();
 
 					account.github !== "" &&
 						(account.github.startsWith("https://") || account.github.startsWith("http://")) &&

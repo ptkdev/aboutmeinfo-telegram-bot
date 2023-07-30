@@ -23,7 +23,7 @@ const schema = new Schema<AboutInterface>({
 	spotify: { type: String, default: "" },
 	discord: { type: String, default: "" },
 	facebook: { type: String, default: "" },
-	twitter: { type: String, default: "" },
+	x: { type: String, default: "" },
 	tiktok: { type: String, default: "" },
 	gitlab: { type: String, default: "" },
 	twitch: { type: String, default: "" },

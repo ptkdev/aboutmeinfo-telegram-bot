@@ -97,32 +97,32 @@ const hears = async (): Promise<void> => {
 								}),
 							);
 						} else {
-							about.step = "twitter";
+							about.step = "x";
 
 							await db.about.update({ id: about.id }, about);
 
 							await telegram.api.message.send(
 								ctx,
 								telegram.api.message.getChatID(ctx),
-								translate(lang.language, "set_command_twitter"),
+								translate(lang.language, "set_command_x"),
 							);
 						}
 
 						break;
 
-					case "twitter":
-					case "set_twitter":
+					case "x":
+					case "set_x":
 						if (
 							!text.startsWith("https://") &&
 							!text.startsWith("http://") &&
 							translate(lang.language, "set_command_skip") !== text
 						) {
-							text = `https://twitter.com/${text}`;
+							text = `https://x.com/${text}`;
 						}
 
-						about.twitter = text === translate(lang.language, "set_command_skip") ? "" : text;
+						about.x = text === translate(lang.language, "set_command_skip") ? "" : text;
 
-						if (about.step.toString() === "set_twitter") {
+						if (about.step.toString() === "set_x") {
 							about.step = "done";
 
 							await db.about.update({ id: about.id }, about);

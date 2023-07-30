@@ -194,7 +194,7 @@ export interface AboutInterface {
 	spotify: string;
 	discord: string;
 	facebook: string;
-	twitter: string;
+	x: string;
 	tiktok: string;
 	gitlab: string;
 	twitch: string;
